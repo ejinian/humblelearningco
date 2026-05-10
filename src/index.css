@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * HUMBLE Learning Co. — Premium Academic palette
+ * Background: warm off-white  #F8F7F4   →  hsl 40 19% 96%
+ * Primary:    deep navy       #1E2A38   →  hsl 212 30% 17%
+ * Accent:     muted gold      #C8A96B   →  hsl 38 47% 60%
+ * Text:       charcoal        #222222   →  hsl 0 0% 13%
+ */
+
+@layer base {
+  :root {
+    --background: 40 19% 96%;
+    --foreground: 0 0% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+
+    --primary: 212 30% 17%;
+    --primary-foreground: 40 19% 96%;
+
+    --secondary: 40 14% 91%;
+    --secondary-foreground: 212 30% 17%;
+
+    --muted: 40 12% 90%;
+    --muted-foreground: 0 0% 35%;
+
+    --accent: 38 47% 60%;
+    --accent-foreground: 212 30% 17%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 40 19% 96%;
+
+    --border: 40 10% 85%;
+    --input: 40 10% 85%;
+    --ring: 212 30% 17%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif tracking-tight text-primary;
+    font-feature-settings: "lnum", "kern";
+  }
+
+  /* Premium underline links inside body copy */
+  .prose-link {
+    @apply underline decoration-accent decoration-2 underline-offset-4 hover:decoration-primary transition-colors;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* A subtle paper-like grain to give the warm off-white some life */
+  .bg-paper {
+    background-color: hsl(var(--background));
+    background-image:
+      radial-gradient(hsl(0 0% 0% / 0.018) 1px, transparent 1px),
+      radial-gradient(hsl(0 0% 0% / 0.012) 1px, transparent 1px);
+    background-size: 24px 24px, 17px 17px;
+    background-position: 0 0, 12px 8px;
+  }
+}
