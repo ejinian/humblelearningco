@@ -33,7 +33,7 @@ export default function Contact() {
           as="h1"
           eyebrow="Get in touch"
           title="Tell us about your student."
-          description="A few sentences is plenty — what they're working on, what's been hard, and what you'd like out of tutoring. We'll reply within a day."
+          description="A few sentences is plenty. What they're working on. What's been hard. What you're hoping for. We reply within a day."
         />
       </section>
 
@@ -79,9 +79,8 @@ export default function Contact() {
                 The first call is free.
               </p>
               <p className="text-muted-foreground">
-                A 15-minute conversation about the student, no obligation. If we
-                don't seem like the right fit for what you need, we'll point you
-                somewhere that is.
+                Fifteen minutes, no obligation. If we're not the right fit,
+                we'll point you to someone who is.
               </p>
             </div>
           </div>

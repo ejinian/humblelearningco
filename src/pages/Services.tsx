@@ -6,11 +6,11 @@ import { ServiceGrid } from "@/components/ServiceGrid";
 import { Button } from "@/components/ui/button";
 
 const formats = [
-  "One-on-one sessions, never group classes",
-  "In-person around Los Angeles or online",
-  "Weekly recurring or as-needed support",
-  "Parent updates so you know what we worked on",
-  "Flexible scheduling around school and activities",
+  "One-on-one. Never group classes.",
+  "In person across LA, or online.",
+  "Weekly recurring or drop-in as needed.",
+  "Parent updates after every session.",
+  "Flexible around school and activities.",
 ];
 
 export default function Services() {
@@ -20,8 +20,8 @@ export default function Services() {
         <SectionHeading
           as="h1"
           eyebrow="Subjects & services"
-          title="One tutor, almost every subject your student is taking."
-          description="We cover the full arc — early reading and arithmetic through calculus, college coursework, test prep, and the executive-function skills schools rarely teach directly."
+          title="One tutor. Any subject. Any age."
+          description="From early reading to college calculus — plus test prep, study skills, and the things school never quite gets to."
         />
       </section>
 
@@ -33,8 +33,8 @@ export default function Services() {
         <div className="container py-20 grid lg:grid-cols-2 gap-12 items-start">
           <SectionHeading
             eyebrow="How sessions work"
-            title="Built to fit a real student's week."
-            description="The format is designed to be easy on busy households and steady enough to actually move the needle."
+            title="Built for the way real weeks run."
+            description="Flexible enough for busy households. Steady enough to make real progress."
           />
 
           <ul className="space-y-3">
@@ -59,8 +59,8 @@ export default function Services() {
       <section className="container py-20 md:py-24 text-center">
         <SectionHeading
           eyebrow="Not sure where to start?"
-          title="Tell us what's going on. We'll point you in the right direction."
-          description="Even if you're not sure which subject is the actual problem, the first call is free and we'll figure it out together."
+          title="We'll help you figure it out."
+          description="Even if you can't name the problem, we can. The first call is free."
           align="center"
           className="mx-auto"
         />

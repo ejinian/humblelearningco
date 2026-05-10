@@ -11,17 +11,17 @@ const values = [
   {
     icon: HeartHandshake,
     title: "Patience first.",
-    body: "Almost every review uses the word 'patient.' That's the baseline — students learn faster when they don't feel rushed or judged.",
+    body: "Students learn faster when they don't feel rushed — or judged. It's the word families use most when they describe us.",
   },
   {
     icon: Target,
-    title: "Plans, not generic worksheets.",
-    body: "Every student gets a small, custom plan. We adjust it as we go — including for ADHD, executive-function challenges, and gaps from earlier years.",
+    title: "Plans, not worksheets.",
+    body: "Every student gets a custom plan, adjusted as we go. ADHD, executive-function gaps, missing fundamentals — all handled.",
   },
   {
     icon: Lightbulb,
-    title: "Understanding, then practice.",
-    body: "We rebuild the underlying ideas first so the practice actually sticks. The grade is a side effect of that, not the goal.",
+    title: "Understanding before practice.",
+    body: "We rebuild the idea first; the practice sticks after. The grade follows on its own — it's never the goal.",
   },
 ];
 
@@ -37,30 +37,26 @@ export default function About() {
               as="h1"
               eyebrow="About"
               title={`Hi, I'm ${site.founder}.`}
-              description="I started HUMBLE Learning Co. because the way students are taught in school doesn't always match the way they actually learn — and I wanted to change that, one session at a time."
+              description="Schools teach one way. Students learn a hundred. I started HUMBLE Learning Co. to bridge the gap — one student at a time."
             />
 
             <div className="prose-content mt-8 space-y-5 text-foreground/85 leading-relaxed text-pretty max-w-2xl">
               <p>
-                Over the last few years I've worked with students from elementary
-                school through college, in subjects ranging from early reading
-                and arithmetic all the way to calculus, chemistry, and AP-level
-                coursework. Some of my students were close to giving up; some
-                were curious and wanted to push further than school was letting
-                them. Most were somewhere in between.
+                I've taught students from kindergarten through college — early
+                readers, struggling juniors, AP standouts, adults switching
+                careers. Some were close to giving up. Some wanted to race
+                ahead. Most were somewhere in between.
               </p>
               <p>
-                What's stayed consistent is the approach: figure out what's
-                actually missing, rebuild it from there, and protect the
-                student's confidence the whole way. A C becoming an A is a great
-                story — the bigger one is the student who used to dread homework
-                and now sits down with it on their own.
+                My approach never changes: find what's missing, rebuild from
+                there, and protect their confidence along the way. A C becoming
+                an A is great. A student who used to dread homework — and now
+                opens the book on their own — is even better.
               </p>
               <p>
-                Sessions are one-on-one and built around your student. We meet
-                in person around {site.location.split(",")[0]}, or online if
-                that's easier. I work with parents and adult learners directly
-                too.
+                Every session is one-on-one and built around your student. In
+                person across {site.location.split(",")[0]}, or online if
+                that's easier. Parents and adult learners welcome too.
               </p>
             </div>
 
@@ -93,7 +89,7 @@ export default function About() {
         <div className="container py-20">
           <SectionHeading
             eyebrow="How I teach"
-            title="Three things I won't compromise on."
+            title="Three things I never compromise on."
             align="center"
             className="mx-auto"
           />
@@ -128,11 +124,10 @@ export default function About() {
               The first call is free
             </p>
             <h3 className="mt-2 font-serif text-3xl md:text-4xl font-semibold leading-tight text-balance">
-              Let's figure out if we're the right fit.
+              Let's see if we're the right fit.
             </h3>
             <p className="mt-3 text-muted-foreground max-w-xl text-pretty leading-relaxed">
-              Tell me a bit about your student and what you're hoping to get out
-              of tutoring. I'll get back to you within a day.
+              Tell me about your student. I'll reply within a day.
             </p>
           </div>
           <Button asChild size="lg" variant="accent">

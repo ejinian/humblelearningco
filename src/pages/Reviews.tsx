@@ -15,8 +15,8 @@ export default function Reviews() {
         <SectionHeading
           as="h1"
           eyebrow="Family reviews"
-          title="What students and parents have written about us."
-          description="Every review on this page is verbatim from Google. We've kept truncations marked the same way Google shows them."
+          title="In their own words."
+          description="Every review below is verbatim from Google — students and parents we've actually worked with."
         />
 
         <div className="mt-8 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
@@ -62,7 +62,7 @@ export default function Reviews() {
               Let's talk about your student.
             </h3>
             <p className="mt-3 text-primary-foreground/80 max-w-xl text-pretty leading-relaxed">
-              The first call is free. No commitment until you're sure we're a fit.
+              Free first call. Zero commitment.
             </p>
           </div>
           <Button asChild size="lg" variant="accent">

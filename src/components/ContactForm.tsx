@@ -245,8 +245,8 @@ export function ContactForm({ className }: ContactFormProps) {
 
       <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-4 pt-2">
         <p className="text-xs text-muted-foreground">
-          Submitting opens your email app with the message prefilled. You can
-          also email us directly at{" "}
+          Submitting opens your email app with this message prefilled. Or email
+          us directly at{" "}
           <a
             href={`mailto:${site.contact.email}`}
             className="prose-link text-primary"

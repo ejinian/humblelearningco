@@ -15,18 +15,18 @@ import { services } from "@/lib/services";
 const stepItems = [
   {
     icon: MessagesSquare,
-    title: "1. Free intro chat",
-    body: "We talk through what's going on, the student's strengths, and what success would look like — no pressure, no contract.",
+    title: "1. Free intro call",
+    body: "Tell us what's going on. We listen, ask questions, and get a feel for where your student stands.",
   },
   {
     icon: Sparkles,
     title: "2. A plan that fits",
-    body: "A small plan tailored to the student: subjects to cover, pace, in-person or online, and how often we meet.",
+    body: "A custom plan — subjects, pace, format, and how often we meet. No templates, no fluff.",
   },
   {
     icon: Calendar,
     title: "3. Sessions begin",
-    body: "We start with the gaps that are blocking progress, then build forward — adjusting as the student grows.",
+    body: "We close the gaps holding your student back, then build forward — adjusting as they grow.",
   },
 ];
 
@@ -40,8 +40,8 @@ export default function Home() {
         <div className="flex items-end justify-between gap-6 flex-wrap">
           <SectionHeading
             eyebrow="What we cover"
-            title="Tutoring across every subject your student is taking."
-            description="Math from multiplication to calculus, reading and writing, science, test prep, study skills — and the in-between things school assumes everyone already knows."
+            title="Every subject. One tutor."
+            description="Math through calculus, reading and writing, science, test prep — and the study skills school never quite teaches."
           />
           <Button asChild variant="link" className="px-0">
             <Link to="/services">
@@ -61,8 +61,8 @@ export default function Home() {
         <div className="container py-20 md:py-24">
           <SectionHeading
             eyebrow="How it works"
-            title="A small, structured start — no hard sell."
-            description="Most families come in worried. The first call is just a conversation, so you can decide if we're the right fit before we ever schedule a session."
+            title="Three steps. No pressure."
+            description="Most families come in worried. The first call is a conversation — not a sales pitch."
             align="center"
             className="mx-auto"
           />
@@ -103,8 +103,8 @@ export default function Home() {
       <section className="container py-20 md:py-24">
         <SectionHeading
           eyebrow="What families say"
-          title="A 5-star Google rating, written by the people we work with."
-          description="Every review here is verbatim from Google. Names link back to public reviews you can verify yourself."
+          title="Five stars, in their own words."
+          description="Real reviews from real families on Google — not a single one paraphrased."
         />
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -145,8 +145,7 @@ export default function Home() {
               Tell us what your student is working on.
             </h3>
             <p className="text-primary-foreground/80 max-w-xl text-pretty leading-relaxed">
-              We'll reply within a day. The first call is free, and there's no
-              obligation to schedule anything after it.
+              Free first call. No commitment. We reply within a day.
             </p>
           </div>
           <Button asChild size="lg" variant="accent">

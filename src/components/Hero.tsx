@@ -26,8 +26,8 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 text-lg md:text-xl text-foreground/75 max-w-xl text-pretty leading-relaxed">
-            {site.tagline} Lessons start by figuring out what's actually getting in the way —
-            then rebuilding from there with the patience and structure school can't always offer.
+            We find what's blocking your student — then rebuild it, patiently,
+            until learning clicks.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
