@@ -13,8 +13,8 @@ export const site = {
 
   // TODO(owner): replace these placeholders.
   contact: {
-    email: "hello@humblelearningco.com",
-    phone: "(555) 555-0123",
+    email: "humblelearnco@gmail.com",
+    phone: "(818) 643-1670",
     // Optional booking link (Calendly, Cal.com, etc.). Leave empty to hide.
     bookingUrl: "",
   },
