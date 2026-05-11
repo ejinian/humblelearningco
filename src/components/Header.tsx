@@ -22,13 +22,13 @@ export function Header() {
       <div className="container flex h-16 items-center justify-between gap-6">
         <Link
           to="/"
-          className="flex items-baseline gap-1.5 text-primary"
+          className="flex items-baseline gap-2 text-primary"
           onClick={() => setOpen(false)}
         >
-          <span className="font-serif text-xl font-semibold tracking-wide">
+          <span className="font-serif text-2xl font-bold tracking-wide sm:text-[1.75rem]">
             HUMBLE
           </span>
-          <span className="font-serif text-sm text-accent uppercase tracking-[0.2em]">
+          <span className="font-serif text-base font-extrabold uppercase tracking-[0.18em] text-[#6f4208] sm:text-lg">
             Learning Co.
           </span>
         </Link>

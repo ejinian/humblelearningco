@@ -14,7 +14,7 @@ export function Footer() {
             <span className="font-serif text-xl font-semibold tracking-wide">
               HUMBLE
             </span>
-            <span className="font-serif text-sm text-accent uppercase tracking-[0.2em]">
+            <span className="font-serif text-sm font-bold uppercase tracking-[0.2em] text-[#f2c86d]">
               Learning Co.
             </span>
           </div>

@@ -48,9 +48,7 @@ export function Hero() {
               {site.rating.stars.toFixed(1)}
             </span>
             <span>·</span>
-            <span>
-              {site.rating.reviewCount}+ {site.rating.source} reviews
-            </span>
+            <span>1000+ students education transformed</span>
           </div>
         </div>
 
