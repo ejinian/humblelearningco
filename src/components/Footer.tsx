@@ -90,7 +90,7 @@ export function Footer() {
       <div className="border-t border-primary-foreground/10">
         <div className="container py-5 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-xs text-primary-foreground/60">
           <span>
-            © {year} {site.name}. All rights reserved.
+            © {year} {site.name}. All rights reserved
           </span>
           <span>{site.domain}</span>
         </div>
