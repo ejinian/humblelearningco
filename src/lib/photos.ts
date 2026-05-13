@@ -1,6 +1,6 @@
 /**
  * Gallery photos served from /public/photos.
- * All seven are landscape selfies of Tiana with students mid-session.
+ * Real tutoring photos used across the site.
  */
 export interface Photo {
   src: string;
@@ -11,6 +11,14 @@ export const photos: Photo[] = [
   {
     src: "/photos/tutoring-01.png",
     alt: "Tiana smiling with a student during a tutoring session.",
+  },
+  {
+    src: "/photos/IMG_4624.jpg",
+    alt: "Student smiling during a reading and worksheet tutoring session.",
+  },
+  {
+    src: "/photos/tutoring-07.png",
+    alt: "Young student smiling during a personalized learning activity.",
   },
   {
     src: "/photos/tutoring-02.png",
@@ -31,10 +39,6 @@ export const photos: Photo[] = [
   {
     src: "/photos/tutoring-06.png",
     alt: "Tiana and a student during a one-on-one tutoring session.",
-  },
-  {
-    src: "/photos/tutoring-07.png",
-    alt: "Tiana smiling with a student after a productive lesson.",
   },
 ];
 

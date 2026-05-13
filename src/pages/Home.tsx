@@ -127,13 +127,13 @@ export default function Home() {
       <section className="container pb-24">
         <SectionHeading
           eyebrow="Inside the sessions"
-          title="Real students. Real progress."
+          title="Real Students. Real Results."
           align="center"
           className="mx-auto"
         />
 
         <div className="mt-10">
-          <PhotoStrip count={4} />
+          <PhotoStrip count={6} />
         </div>
 
         <div className="mt-16 rounded-2xl bg-primary text-primary-foreground p-10 md:p-14 grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
@@ -145,7 +145,7 @@ export default function Home() {
               Tell us what your student is working on.
             </h3>
             <p className="text-primary-foreground/80 max-w-xl text-pretty leading-relaxed">
-              Free first call. No commitment. We reply within a day.
+              FREE Consultation. Get Started Today.
             </p>
           </div>
           <Button asChild size="lg" variant="accent">
