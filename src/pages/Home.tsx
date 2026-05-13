@@ -40,7 +40,7 @@ export default function Home() {
         <div className="flex items-end justify-between gap-6 flex-wrap">
           <SectionHeading
             eyebrow="What we cover"
-            title="Every subject. One tutor."
+            title="Every Subject. Every Age. Any Learning Style."
             description="Math through calculus, reading and writing, science, test prep — and the study skills school never quite teaches."
           />
           <Button asChild variant="link" className="px-0">

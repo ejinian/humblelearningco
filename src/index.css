@@ -60,7 +60,7 @@
   h2,
   h3,
   h4 {
-    @apply font-serif tracking-tight text-primary;
+    @apply font-serif tracking-normal text-primary;
     font-feature-settings: "lnum", "kern";
   }
 

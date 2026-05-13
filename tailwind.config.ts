@@ -53,9 +53,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        // Display: warm, premium serif. Body: clean humanist sans.
-        serif: ['"Cormorant Garamond"', "Georgia", "ui-serif", "serif"],
-        sans: ['"Inter"', "ui-sans-serif", "system-ui", "sans-serif"],
+        // Display: bold, distinctive serif. Body: clean modern sans.
+        serif: ['"Fraunces"', "Georgia", "ui-serif", "serif"],
+        sans: ['"Manrope"', "ui-sans-serif", "system-ui", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

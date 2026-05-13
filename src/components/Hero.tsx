@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { StarRating } from "@/components/StarRating";
@@ -14,20 +14,16 @@ export function Hero() {
 
       <div className="container grid lg:grid-cols-12 gap-12 lg:gap-16 py-16 md:py-24 items-center">
         <div className="lg:col-span-7 animate-fade-up">
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-accent font-sans font-medium">
-            <MapPin className="size-3.5" />
-            <span>Los Angeles · in-person & online</span>
-          </div>
-
-          <h1 className="mt-5 font-serif text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] text-balance">
-            Personalized tutoring,
+          <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-black leading-[0.9] text-balance">
+            Personalized Learning.
             <br />
-            <span className="text-accent">built around your student.</span>
+            <span className="text-accent">Proven Results.</span>
           </h1>
 
-          <p className="mt-6 text-lg md:text-xl text-foreground/75 max-w-xl text-pretty leading-relaxed">
-            We find what's blocking your student — then rebuild it, patiently,
-            until learning clicks.
+          <p className="mt-8 text-xl md:text-2xl text-foreground/85 max-w-2xl text-pretty leading-relaxed font-semibold">
+            We turn "I cant do this" into "This finally makes sense!"
+            <br />
+            Learning made easy, supportive, and stress free.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
