@@ -8,11 +8,11 @@ interface PhotoStripProps {
 export function PhotoStrip({ count = 4 }: PhotoStripProps) {
   const items = photos.slice(0, count);
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
       {items.map((p, i) => (
         <div
           key={p.src}
-          className="relative aspect-[4/3] rounded-lg overflow-hidden ring-1 ring-border bg-muted"
+          className="relative aspect-[4/3] overflow-hidden rounded-lg bg-secondary shadow-sm ring-1 ring-border"
         >
           <img
             src={p.src}

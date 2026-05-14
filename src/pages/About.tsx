@@ -4,7 +4,7 @@ import { ArrowRight, HeartHandshake, Lightbulb, Target } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { photos } from "@/lib/photos";
+import { founderPhoto } from "@/lib/photos";
 import { site } from "@/lib/site";
 
 const values = [
@@ -26,19 +26,23 @@ const values = [
 ];
 
 export default function About() {
-  const aboutPhoto = photos[1] ?? photos[0];
-
   return (
     <div>
       <section className="container py-16 md:py-24">
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7">
-            <SectionHeading
-              as="h1"
-              eyebrow="About"
-              title={`Hi, I'm ${site.founder}.`}
-              description="Schools teach one way. Students learn a hundred. I started HUMBLE Learning Co. to bridge the gap — one student at a time."
-            />
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.46fr)] lg:items-center">
+          <div>
+            <div className="max-w-2xl">
+              <p className="font-serif text-2xl font-semibold leading-none text-accent md:text-3xl">
+                About
+              </p>
+              <h1 className="mt-4 font-serif text-4xl font-semibold leading-[1.05] text-primary text-balance md:text-5xl lg:text-6xl">
+                Meet the Founder.
+              </h1>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground text-pretty md:text-lg">
+                Schools teach one way. Students learn a hundred. I started
+                HUMBLE Learning Co. to bridge the gap — one student at a time.
+              </p>
+            </div>
 
             <div className="prose-content mt-8 space-y-5 text-foreground/85 leading-relaxed text-pretty max-w-2xl">
               <p>
@@ -52,6 +56,13 @@ export default function About() {
                 there, and protect their confidence along the way. A C becoming
                 an A is great. A student who used to dread homework — and now
                 opens the book on their own — is even better.
+              </p>
+              <p>
+                What sets us apart is that we teach lifelong skills. The goal
+                is not for students to rely on tutoring forever — it is to
+                transform their academic experience, show them what they are
+                capable of, and equip them with skills they can carry into
+                every subject and every stage of learning.
               </p>
               <p>
                 Every session is one-on-one and built around your student. In
@@ -73,12 +84,16 @@ export default function About() {
             </div>
           </div>
 
-          <div className="lg:col-span-5">
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden ring-1 ring-border shadow-xl shadow-primary/15">
+          <div className="relative mx-auto w-full max-w-sm lg:mx-0 lg:justify-self-end">
+            <div
+              className="absolute -inset-3 rounded-[1.35rem] border border-accent/20 bg-card/50 shadow-[0_24px_70px_hsl(var(--primary)/0.12)]"
+              aria-hidden
+            />
+            <div className="relative aspect-[3/4] overflow-hidden rounded-[1.1rem] bg-secondary shadow-xl shadow-primary/15 ring-1 ring-primary/10">
               <img
-                src={aboutPhoto.src}
-                alt={aboutPhoto.alt}
-                className="absolute inset-0 size-full object-cover"
+                src={founderPhoto.src}
+                alt={founderPhoto.alt}
+                className="absolute inset-0 size-full object-cover object-[50%_35%]"
               />
             </div>
           </div>

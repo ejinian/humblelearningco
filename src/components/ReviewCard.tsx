@@ -27,8 +27,10 @@ export function ReviewCard({ review, className }: ReviewCardProps) {
         />
 
         <p className="text-foreground/90 leading-relaxed text-pretty flex-1">
-          {review.body}
-          {review.truncated && <span className="text-muted-foreground"> …</span>}
+          {review.featuredExcerpt ?? review.body}
+          {!review.featuredExcerpt && review.truncated && (
+            <span className="text-muted-foreground"> …</span>
+          )}
         </p>
 
         <div className="flex items-center gap-3 pt-2 border-t border-border/60">

@@ -23,7 +23,7 @@ describe("App routes", () => {
     expect(
       screen.getByRole("heading", {
         level: 1,
-        name: /built around your student/i,
+        name: /personalized learning.*proven results/i,
       }),
     ).toBeInTheDocument();
   });

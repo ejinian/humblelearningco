@@ -21,7 +21,7 @@ export default function Services() {
           as="h1"
           eyebrow="Subjects & services"
           title="One tutor. Any subject. Any age."
-          description="From early reading to college calculus — plus test prep, study skills, and the things school never quite gets to."
+          description="From early reading to college calculus, PSAT, SAT, ACT prep, study skills, and tech help — support for the skills school expects but does not always teach."
         />
       </section>
 

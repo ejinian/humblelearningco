@@ -4,6 +4,7 @@ import {
   FlaskConical,
   GraduationCap,
   ListChecks,
+  Laptop,
   PenLine,
   ScrollText,
   Sparkles,
@@ -98,6 +99,22 @@ export const services: Service[] = [
       "Daily homework support",
       "Project planning",
       "Last-minute review before tests",
+    ],
+  },
+  {
+    slug: "tech-help",
+    title: "Tech Help",
+    blurb:
+      "Support with the digital tools students need for school, projects, and real life.",
+    detail:
+      "We help students feel comfortable with technology, from school platforms and documents to presentations, research, and practical digital skills.",
+    icon: Laptop,
+    topics: [
+      "School portals & learning platforms",
+      "Google Docs, Slides & Drive",
+      "Presentations & digital projects",
+      "Research and online organization",
+      "Basic computer confidence",
     ],
   },
   {

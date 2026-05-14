@@ -41,7 +41,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="What we cover"
             title="Every Subject. Every Age. Any Learning Style."
-            description="Math through calculus, reading and writing, science, test prep — and the study skills school never quite teaches."
+            description="From learning concepts, to homework help, tech help, PSAT, SAT, and ACT prep, plus building study skills and organizational skills, we prepare you with real world skills."
           />
           <Button asChild variant="link" className="px-0">
             <Link to="/services">
@@ -52,7 +52,7 @@ export default function Home() {
         </div>
 
         <div className="mt-12">
-          <ServiceGrid items={services.slice(0, 6)} />
+          <ServiceGrid items={services.slice(0, 7)} />
         </div>
       </section>
 
@@ -62,7 +62,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="How it works"
             title="Three steps. No pressure."
-            description="Most families come in worried. The first call is a conversation — not a sales pitch."
+            description="Tell us where your student feels stuck, and we will map out support that builds confidence, structure, stronger habits, and the skills to feel back in control."
             align="center"
             className="mx-auto"
           />
@@ -144,7 +144,7 @@ export default function Home() {
             <h3 className="font-serif text-3xl md:text-4xl font-semibold leading-tight text-balance">
               Tell us what your student is working on.
             </h3>
-            <p className="text-primary-foreground/80 max-w-xl text-pretty leading-relaxed">
+            <p className="text-xl font-semibold text-primary-foreground/90 max-w-xl text-pretty leading-relaxed md:text-2xl">
               FREE Consultation. Get Started Today.
             </p>
           </div>

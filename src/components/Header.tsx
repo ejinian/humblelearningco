@@ -18,23 +18,23 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
-      <div className="container flex h-16 items-center justify-between gap-6">
+    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/90 shadow-sm shadow-primary/5 backdrop-blur supports-[backdrop-filter]:bg-background/75">
+      <div className="container flex h-20 items-center justify-between gap-7 md:h-24">
         <Link
           to="/"
-          className="flex items-baseline gap-2 text-primary"
+          className="flex min-w-0 items-baseline gap-2.5 text-primary transition-opacity hover:opacity-85 sm:gap-3"
           onClick={() => setOpen(false)}
         >
-          <span className="font-serif text-2xl font-bold tracking-wide sm:text-[1.75rem]">
+          <span className="font-serif text-[1.7rem] font-bold tracking-wide sm:text-[2.15rem] lg:text-[2.35rem]">
             HUMBLE
           </span>
-          <span className="font-serif text-base font-extrabold uppercase tracking-[0.18em] text-[#6f4208] sm:text-lg">
+          <span className="font-serif text-[0.95rem] font-extrabold uppercase tracking-[0.2em] text-[#6f4208] sm:text-xl lg:text-[1.35rem]">
             Learning Co.
           </span>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-7" aria-label="Primary">
+        <nav className="hidden md:flex items-center gap-8 lg:gap-10" aria-label="Primary">
           {nav.map((item) => (
             <NavLink
               key={item.to}
@@ -42,7 +42,7 @@ export function Header() {
               end={item.end}
               className={({ isActive }) =>
                 cn(
-                  "text-sm font-medium transition-colors",
+                  "text-base font-semibold transition-colors lg:text-lg",
                   "text-foreground/70 hover:text-primary",
                   isActive && "text-primary",
                 )
@@ -54,19 +54,19 @@ export function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
-          <Button asChild variant="accent" size="sm">
+          <Button asChild variant="accent" className="h-12 rounded-md px-6 text-base font-semibold shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
             <Link to="/contact">Book a session</Link>
           </Button>
         </div>
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden inline-flex items-center justify-center size-10 rounded-md text-primary hover:bg-secondary"
+          className="md:hidden inline-flex size-12 items-center justify-center rounded-md text-primary hover:bg-secondary"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
         >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          {open ? <X className="size-6" /> : <Menu className="size-6" />}
         </button>
       </div>
 
@@ -85,7 +85,7 @@ export function Header() {
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
                   cn(
-                    "px-2 py-3 rounded-md text-base font-medium transition-colors",
+                    "px-2 py-3.5 rounded-md text-lg font-semibold transition-colors",
                     "text-foreground/80 hover:bg-secondary hover:text-primary",
                     isActive && "bg-secondary text-primary",
                   )

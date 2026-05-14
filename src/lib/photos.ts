@@ -13,10 +13,6 @@ export const photos: Photo[] = [
     alt: "Tiana smiling with a student during a tutoring session.",
   },
   {
-    src: "/photos/IMG_4624.jpg",
-    alt: "Student smiling during a reading and worksheet tutoring session.",
-  },
-  {
     src: "/photos/tutoring-07.png",
     alt: "Young student smiling during a personalized learning activity.",
   },
@@ -25,22 +21,24 @@ export const photos: Photo[] = [
     alt: "Tiana and a student reviewing notes together at a study session.",
   },
   {
-    src: "/photos/tutoring-03.png",
-    alt: "Tiana working through a problem with a student.",
-  },
-  {
     src: "/photos/tutoring-04.png",
     alt: "Tiana and a student studying together at a co-working space.",
   },
   {
     src: "/photos/tutoring-05.png",
-    alt: "Tiana helping a student with their schoolwork.",
+    alt: "Tiana helping a student with tech help during a tutoring session.",
   },
   {
     src: "/photos/tutoring-06.png",
-    alt: "Tiana and a student during a one-on-one tutoring session.",
+    alt: "Tiana helping a young student during a personalized learning activity.",
   },
 ];
 
-/** Lead photo used at the top of pages and the About section. */
+/** Lead photo used at the top of pages. */
 export const heroPhoto = photos[0];
+
+/** Founder portrait used only on the About page. */
+export const founderPhoto: Photo = {
+  src: "/photos/tutoring-03.png",
+  alt: "Portrait of Tiana, founder of HUMBLE Learning Co.",
+};
