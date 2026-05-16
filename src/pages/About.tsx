@@ -86,7 +86,36 @@ export default function About() {
               </p>
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-10 max-w-2xl">
+              <p className="text-xs uppercase tracking-[0.22em] text-accent font-medium mb-4">
+                Academic background
+              </p>
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+                <div className="rounded-lg border border-border/70 bg-card px-4 py-4 shadow-sm">
+                  <p className="font-serif text-3xl font-semibold text-primary">1600</p>
+                  <p className="mt-0.5 text-xs font-medium uppercase tracking-[0.14em] text-accent">SAT Score</p>
+                  <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                    Perfect score — I know this test from the inside out.
+                  </p>
+                </div>
+                <div className="rounded-lg border border-border/70 bg-card px-4 py-4 shadow-sm">
+                  <p className="font-serif text-3xl font-semibold text-primary">4.6</p>
+                  <p className="mt-0.5 text-xs font-medium uppercase tracking-[0.14em] text-accent">Weighted GPA</p>
+                  <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                    I know what a demanding course load actually requires.
+                  </p>
+                </div>
+                <div className="rounded-lg border border-border/70 bg-card px-4 py-4 shadow-sm">
+                  <p className="font-serif text-xl font-semibold text-primary leading-tight">UCLA · UCB · USC</p>
+                  <p className="mt-0.5 text-xs font-medium uppercase tracking-[0.14em] text-accent">Accepted</p>
+                  <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                    I've been through the college process — I can guide students through it too.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" variant="accent">
                 <Link to="/contact">
                   Book a free intro call

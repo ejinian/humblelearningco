@@ -6,6 +6,7 @@ import About from "@/pages/About";
 import Services from "@/pages/Services";
 import Reviews from "@/pages/Reviews";
 import Contact from "@/pages/Contact";
+import NeighborhoodPage from "@/pages/NeighborhoodPage";
 import NotFound from "@/pages/NotFound";
 
 export default function App() {
@@ -17,6 +18,8 @@ export default function App() {
         <Route path="services" element={<Services />} />
         <Route path="reviews" element={<Reviews />} />
         <Route path="contact" element={<Contact />} />
+        {/* Neighborhood pages — getNeighborhood returns undefined for unknown slugs → 404 */}
+        <Route path=":slug" element={<NeighborhoodPage />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

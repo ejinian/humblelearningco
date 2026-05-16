@@ -153,101 +153,54 @@ CI hasn't been wired up. If you add it, run `lint`, `test`, and `build` in that 
 
 | Step | Verdict |
 | --- | --- |
-| 1. Website | Done. Good quality. Has SEO gaps. |
-| 2. SEO | In progress. Most impactful quick wins are **off-site** (Google Business Profile, Nextdoor, Thumbtack) not in code. Website fixes matter but take 3–6 months to rank. |
-| 3. Paid ads | Don't wait for SEO to mature — run both in parallel. Ads give immediate reach but cost money; SEO compounds over time. |
+| 1. Website | **Done.** |
+| 2. SEO | **Done (technical).** Off-site actions ongoing. |
+| 3. Paid ads | Future — marketer meeting planned. |
 
-**The single highest-impact action that isn't a code change:** Ensure the Google Business Profile is 100% complete — services listed, hours, description, 10+ photos (including from `public/photos/`), and the Q&A section populated. GBP is how parents find local tutors, not the website's organic ranking.
+### Technical SEO — COMPLETED (2026-05-15)
 
----
+- [x] `react-helmet-async` installed — per-page `<title>` and `<meta description>` on all 5 pages
+- [x] LocalBusiness JSON-LD structured data on homepage (`src/components/StructuredData.tsx`)
+- [x] `public/sitemap.xml` — all 5 routes, submitted to Google Search Console
+- [x] `public/robots.txt` — points crawlers to sitemap
+- [x] Google Search Console verified (`public/google083a7646bd13ec1b.html`) and sitemap submitted
+- [x] `reviews.ts` updated from 23 → 85 verbatim reviews; `site.ts` reviewCount updated to 100
+- [ ] Image optimization — owner converts PNGs to WebP via squoosh.app (7 photos in `public/photos/`)
+- [ ] OG social share image — 1200×630 branded image for link previews (low priority)
 
-### Technical SEO checklist (code-side, ordered by impact)
+### Off-site SEO — owner action required
 
-**Priority 1 — Per-page `<title>` and `<meta description>`**
-- This is the most critical technical gap. The entire site currently shares one title from `index.html`.
-- Solution: Add `react-helmet-async`. Each page component renders its own `<Helmet>` with a unique title + description targeting local keywords.
-- Target title format: `[Service] in [Neighborhood], LA | HUMBLE Learning Co.`
-- Example: Home → "Private Tutoring in Los Angeles | HUMBLE Learning Co."
-- Example: Services → "Tutoring Services — Math, Reading, Science, Test Prep | HUMBLE Learning Co."
-- Example: Contact → "Book a Free Intro Call | HUMBLE Learning Co."
-
-**Priority 2 — LocalBusiness JSON-LD structured data**
-- Add JSON-LD on the homepage (and ideally all pages) so Google can extract business info for rich results.
-- Include: `@type: LocalBusiness`, name, url, telephone, email, address (LA), areaServed (LA neighborhoods), priceRange, aggregateRating (5 stars, 23 reviews).
-- This is what populates the Knowledge Panel and "People also search" cards.
-
-**Priority 3 — `sitemap.xml` and `robots.txt`**
-- Add `/public/sitemap.xml` listing all 5 routes with `lastmod` and `priority`.
-- Add `/public/robots.txt` allowing all crawlers and pointing to the sitemap.
-- Submit sitemap to Google Search Console immediately after deployment.
-
-**Priority 4 — Google Search Console + Analytics**
-- Verify the domain in Google Search Console (add a `<meta name="google-site-verification">` tag or DNS TXT record).
-- Add Google Analytics 4 (or simpler: Plausible/Fathom). Without tracking, there's no way to know what's working.
-- Search Console will surface crawl errors, index coverage, and which queries are driving clicks.
-
-**Priority 5 — Image optimization**
-- Photos are PNG at ~1–2 MB each. This tanks Core Web Vitals (LCP in particular).
-- Convert to WebP at ~1600px wide. A one-shot `sharp` script can batch all 7 photos.
-- Add explicit `width` and `height` attributes to `<img>` tags in `PhotoStrip.tsx` to prevent layout shift (CLS).
-
-**Priority 6 — Open Graph image**
-- `index.html` has OG tags but no `og:image`. Without one, link shares on social/text/email show a blank preview.
-- Create a 1200×630 branded image (navy bg + gold "H" + tagline) and add `<meta property="og:image">`.
-
----
-
-### Off-site / non-code SEO checklist (owner action required)
-
-These are not code tasks — they require Tiana to take action. They are listed here so Claude Code knows the full picture.
-
-| Action | Why it matters |
+| Action | Status |
 | --- | --- |
-| **Google Business Profile (GBP)** — fill in all fields, add 10+ photos, list every service, populate Q&A | Single highest-impact action. GBP powers the local map pack and "near me" queries. |
-| **Ask recent clients for Google reviews** — get to 30+ reviews with recent dates | Review recency matters. A surge of new reviews signals active business. |
-| **Nextdoor listing** | Neighborhood parents trust Nextdoor recommendations heavily. Free. High conversion. |
-| **Thumbtack profile** | Parents actively searching for tutors use Thumbtack. Lead gen marketplace. |
-| **Yelp listing** | Claim and populate. Secondary to GBP but builds NAP citation consistency. |
-| **NAP consistency** — same Name, Address, Phone everywhere | Google cross-references citations. Inconsistencies hurt local ranking. |
-| **Instagram (humblelearningco)** — post session photos, student wins, tip videos | Already have the handle. Social signals help. Reels/TikTok can go viral in a neighborhood. |
+| Google Business Profile — 3 verified profiles (HUMBLE Learning Co. is the main one) | GBP photos already uploaded (50+). Fill in description, hours, services, Q&A. |
+| Push for more Google reviews from recent clients | Ongoing |
+| Nextdoor listing | Not started |
+| Thumbtack profile | Not started |
+| Yelp listing | Not started |
+
+### Content SEO — next code phase
+
+- **Neighborhood landing pages** — `/encino`, `/tarzana`, `/sherman-oaks`, `/beverly-hills`, etc. Each targets "[neighborhood] tutor" queries. High SEO value.
+- **FAQ page** — "how much does a tutor cost in LA?", "does Tiana tutor ADHD students?" etc.
+
+### Target keywords
+
+Primary: "tutor in Los Angeles", "private tutor [neighborhood]", "math tutor LA", "SAT tutor LA", "ADHD tutor LA"
+Secondary: "one on one tutoring LA", "homework help [neighborhood]", "reading tutor Los Angeles"
 
 ---
 
-### Content SEO (medium-term, 1–3 months out)
+### Future: "Tiana Agent" — AI chat widget
 
-- **Neighborhood landing pages** — Individual pages for high-value service areas: Encino, Tarzana, Sherman Oaks, Studio City, Bel Air, Beverly Hills, Valley Village. Each page targets "[neighborhood] tutor" queries. Template: same services + reviews, copy personalized to that neighborhood.
-- **FAQ page** — Answers to "how much does a tutor cost in LA?", "what subjects does HUMBLE cover?", "does Tiana tutor students with ADHD?" — these are zero-click-opportunity queries.
-- **Blog (optional, long-term)** — "How to help a kid who hates reading", "SAT vs ACT: which is right for your student?" — builds topical authority. Only pursue if Tiana has time to write or has budget for content.
+**Concept:** Floating chat widget on the site where a Claude-powered bot introduces itself as Tiana, asks about the student's situation, collects lead info (name, grade, subject, parent email), and says "Tiana will follow up within 24 hours."
 
----
+**What it takes:**
+- Frontend: chat UI component (floating button → message thread). Buildable in this repo.
+- Backend: first real server requirement. A Vercel serverless function (Edge Function) calls the Anthropic API with a constrained system prompt.
+- AI: Claude API with a narrow system prompt — responds only as a lead-intake agent, never tutors, never quotes prices, always ends with "Tiana will be in touch."
+- Cost: Anthropic API at this traffic level = ~$5–20/month. Negligible.
 
-### Target keywords to rank for (local intent)
-
-Primary:
-- "tutor in Los Angeles" / "LA tutor"
-- "private tutor [neighborhood]" — Encino, Tarzana, Sherman Oaks, Studio City, Beverly Hills
-- "math tutor Los Angeles"
-- "SAT tutor Los Angeles"
-- "ADHD tutor Los Angeles"
-
-Secondary:
-- "one on one tutoring LA"
-- "homework help [neighborhood]"
-- "reading tutor Los Angeles elementary"
-- "college prep tutor LA"
-
----
-
-### Execution order (what Claude Code works on first)
-
-1. `react-helmet-async` — per-page titles/descriptions (code change, high impact)
-2. LocalBusiness JSON-LD on homepage (code change, high impact)
-3. `sitemap.xml` + `robots.txt` (static files in `/public/`, quick)
-4. Image optimization script (one-shot `sharp` conversion, owner approval needed)
-5. OG image (design + `index.html` update)
-6. Google Search Console verification tag (once owner provides the code)
-
-Off-site actions are Tiana's responsibility; Claude Code cannot do them.
+**Honest assessment:** Good lead-gen idea. Converts passive browsers into warm leads better than a contact form alone. The risk is AI saying something off-brand — mitigated by a tight system prompt. Complexity is moderate: chat UI is straightforward, but this is the first backend work on the project (Vercel Edge Function). Plan for 2–3 sessions to do it right. Do it after neighborhood landing pages — organic traffic first, then conversion optimization.
 
 ---
 
