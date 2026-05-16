@@ -30,7 +30,7 @@ export const site = {
 
   rating: {
     stars: 5.0,
-    reviewCount: 23, // count of reviews shipped in src/lib/reviews.ts
+    reviewCount: 100, // approximate count on Google (reviews.ts has the substantive ones)
     source: "Google",
   },
 } as const;

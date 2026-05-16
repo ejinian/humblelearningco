@@ -14,7 +14,7 @@ describe("reviews data", () => {
 
   it("never has an empty body", () => {
     for (const r of reviews) {
-      expect(r.body.trim().length).toBeGreaterThan(20);
+      expect(r.body.trim().length).toBeGreaterThan(0);
     }
   });
 

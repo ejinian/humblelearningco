@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
@@ -11,6 +12,20 @@ import { site } from "@/lib/site";
 export default function Reviews() {
   return (
     <div>
+      <Helmet>
+        <title>100+ Five-Star Google Reviews | HUMBLE Learning Co.</title>
+        <meta
+          name="description"
+          content="Read what Los Angeles families say about HUMBLE Learning Co. — 100+ five-star Google reviews from students and parents across LA."
+        />
+        <meta property="og:title" content="100+ Five-Star Google Reviews | HUMBLE Learning Co." />
+        <meta
+          property="og:description"
+          content="Read what Los Angeles families say about HUMBLE Learning Co. — 100+ five-star Google reviews from students and parents across LA."
+        />
+        <link rel="canonical" href="https://humblelearningco.com/reviews" />
+      </Helmet>
+
       <section className="container py-16 md:py-20">
         <SectionHeading
           as="h1"

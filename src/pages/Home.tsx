@@ -1,7 +1,9 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowRight, Calendar, MessagesSquare, Sparkles } from "lucide-react";
 
 import { Hero } from "@/components/Hero";
+import { StructuredData } from "@/components/StructuredData";
 import { ServiceGrid } from "@/components/ServiceGrid";
 import { ReviewCard } from "@/components/ReviewCard";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -33,6 +35,21 @@ const stepItems = [
 export default function Home() {
   return (
     <div>
+      <Helmet>
+        <title>Private Tutoring in Los Angeles | HUMBLE Learning Co.</title>
+        <meta
+          name="description"
+          content="One-on-one tutoring for K–12 and college students in Los Angeles. Math, reading, science, test prep, ADHD-friendly — Encino, Tarzana, Sherman Oaks & beyond. First call free."
+        />
+        <meta property="og:title" content="Private Tutoring in Los Angeles | HUMBLE Learning Co." />
+        <meta
+          property="og:description"
+          content="One-on-one tutoring for K–12 and college students in Los Angeles. Math, reading, science, test prep, ADHD-friendly — Encino, Tarzana, Sherman Oaks & beyond. First call free."
+        />
+        <link rel="canonical" href="https://humblelearningco.com/" />
+      </Helmet>
+      <StructuredData />
+
       <Hero />
 
       {/* Services preview */}

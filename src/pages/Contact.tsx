@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 import { SectionHeading } from "@/components/SectionHeading";
@@ -28,6 +29,20 @@ const channels = [
 export default function Contact() {
   return (
     <div>
+      <Helmet>
+        <title>Book a Free Intro Call | HUMBLE Learning Co. — LA Tutor</title>
+        <meta
+          name="description"
+          content="Schedule your free 15-minute intro call with HUMBLE Learning Co. Tell us about your student — we reply within a day. In-person across LA or online."
+        />
+        <meta property="og:title" content="Book a Free Intro Call | HUMBLE Learning Co." />
+        <meta
+          property="og:description"
+          content="Schedule your free 15-minute intro call with HUMBLE Learning Co. Tell us about your student — we reply within a day. In-person across LA or online."
+        />
+        <link rel="canonical" href="https://humblelearningco.com/contact" />
+      </Helmet>
+
       <section className="container py-16 md:py-20">
         <SectionHeading
           as="h1"

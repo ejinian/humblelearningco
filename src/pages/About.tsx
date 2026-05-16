@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowRight, HeartHandshake, Lightbulb, Target } from "lucide-react";
 
@@ -28,6 +29,20 @@ const values = [
 export default function About() {
   return (
     <div>
+      <Helmet>
+        <title>About Tiana — Founder & Tutor | HUMBLE Learning Co.</title>
+        <meta
+          name="description"
+          content="Meet Tiana, founder of HUMBLE Learning Co. Patient, personalized one-on-one tutoring for every learning style — Los Angeles, in-person and online."
+        />
+        <meta property="og:title" content="About Tiana — Founder & Tutor | HUMBLE Learning Co." />
+        <meta
+          property="og:description"
+          content="Meet Tiana, founder of HUMBLE Learning Co. Patient, personalized one-on-one tutoring for every learning style — Los Angeles, in-person and online."
+        />
+        <link rel="canonical" href="https://humblelearningco.com/about" />
+      </Helmet>
+
       <section className="container py-16 md:py-24">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.46fr)] lg:items-center">
           <div>

@@ -2,17 +2,20 @@ import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { HelmetProvider } from "react-helmet-async";
 
 import App from "@/App";
 
 function renderApp(initialPath: string) {
   const client = new QueryClient();
   return render(
-    <QueryClientProvider client={client}>
-      <MemoryRouter initialEntries={[initialPath]}>
-        <App />
-      </MemoryRouter>
-    </QueryClientProvider>,
+    <HelmetProvider>
+      <QueryClientProvider client={client}>
+        <MemoryRouter initialEntries={[initialPath]}>
+          <App />
+        </MemoryRouter>
+      </QueryClientProvider>
+    </HelmetProvider>,
   );
 }
 

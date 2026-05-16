@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
 
@@ -16,6 +17,20 @@ const formats = [
 export default function Services() {
   return (
     <div>
+      <Helmet>
+        <title>Tutoring Services — Math, Reading, Science, Test Prep | HUMBLE Learning Co.</title>
+        <meta
+          name="description"
+          content="One tutor, almost every subject. K–12 math, reading, writing, science, SAT/ACT/PSAT prep, homework help, study skills, and college courses in Los Angeles."
+        />
+        <meta property="og:title" content="Tutoring Services — Math, Reading, Science, Test Prep | HUMBLE Learning Co." />
+        <meta
+          property="og:description"
+          content="One tutor, almost every subject. K–12 math, reading, writing, science, SAT/ACT/PSAT prep, homework help, study skills, and college courses in Los Angeles."
+        />
+        <link rel="canonical" href="https://humblelearningco.com/services" />
+      </Helmet>
+
       <section className="container py-16 md:py-20">
         <SectionHeading
           as="h1"
