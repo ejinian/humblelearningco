@@ -40,7 +40,7 @@ export default function About() {
           property="og:description"
           content="Meet Tiana, founder of HUMBLE Learning Co. Patient, personalized one-on-one tutoring for every learning style — Los Angeles, in-person and online."
         />
-        <link rel="canonical" href="https://humblelearningco.com/about" />
+        <link rel="canonical" href={`${site.url}/about`} />
       </Helmet>
 
       <section className="container py-16 md:py-24">

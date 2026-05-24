@@ -5,6 +5,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ServiceGrid } from "@/components/ServiceGrid";
 import { Button } from "@/components/ui/button";
+import { site } from "@/lib/site";
 
 const formats = [
   "One-on-one. Never group classes.",
@@ -28,7 +29,7 @@ export default function Services() {
           property="og:description"
           content="One tutor, almost every subject. K–12 math, reading, writing, science, SAT/ACT/PSAT prep, homework help, study skills, and college courses in Los Angeles."
         />
-        <link rel="canonical" href="https://humblelearningco.com/services" />
+        <link rel="canonical" href={`${site.url}/services`} />
       </Helmet>
 
       <section className="container py-16 md:py-20">

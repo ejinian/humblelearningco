@@ -6,8 +6,8 @@ export const site = {
   name: "HUMBLE Learning Co.",
   shortName: "HUMBLE",
   tagline: "One-on-one tutoring that meets your student where they are.",
-  domain: "humblelearningco.com",
-  url: "https://humblelearningco.com",
+  domain: "www.humblelearningco.com",
+  url: "https://www.humblelearningco.com",
   founder: "Tiana",
   location: "Los Angeles, CA",
 

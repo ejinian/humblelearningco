@@ -40,7 +40,7 @@ export default function Contact() {
           property="og:description"
           content="Schedule your free 15-minute intro call with HUMBLE Learning Co. Tell us about your student — we reply within a day. In-person across LA or online."
         />
-        <link rel="canonical" href="https://humblelearningco.com/contact" />
+        <link rel="canonical" href={`${site.url}/contact`} />
       </Helmet>
 
       <section className="container py-16 md:py-20">

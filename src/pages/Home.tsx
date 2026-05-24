@@ -13,6 +13,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 import { featuredReviews } from "@/lib/reviews";
 import { services } from "@/lib/services";
+import { site } from "@/lib/site";
 
 const stepItems = [
   {
@@ -46,7 +47,7 @@ export default function Home() {
           property="og:description"
           content="One-on-one tutoring for K–12 and college students in Los Angeles. Math, reading, science, test prep, ADHD-friendly — Encino, Tarzana, Sherman Oaks & beyond. First call free."
         />
-        <link rel="canonical" href="https://humblelearningco.com/" />
+        <link rel="canonical" href={`${site.url}/`} />
       </Helmet>
       <StructuredData />
 

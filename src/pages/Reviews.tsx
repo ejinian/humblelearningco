@@ -23,7 +23,7 @@ export default function Reviews() {
           property="og:description"
           content="Read what Los Angeles families say about HUMBLE Learning Co. — 100+ five-star Google reviews from students and parents across LA."
         />
-        <link rel="canonical" href="https://humblelearningco.com/reviews" />
+        <link rel="canonical" href={`${site.url}/reviews`} />
       </Helmet>
 
       <section className="container py-16 md:py-20">
