@@ -37,12 +37,12 @@ export default function Home() {
   return (
     <div>
       <Helmet>
-        <title>Best Private Tutoring in Los Angeles | HUMBLE Learning Co.</title>
+        <title>5-Star Private Tutor in Los Angeles | HUMBLE Learning Co.</title>
         <meta
           name="description"
           content="One-on-one tutoring for K–12 and college students in Los Angeles. Math, reading, science, test prep, ADHD-friendly — Encino, Tarzana, Sherman Oaks & beyond. First call free."
         />
-        <meta property="og:title" content="Best Private Tutoring in Los Angeles | HUMBLE Learning Co." />
+        <meta property="og:title" content="5-Star Private Tutor in Los Angeles | HUMBLE Learning Co." />
         <meta
           property="og:description"
           content="One-on-one tutoring for K–12 and college students in Los Angeles. Math, reading, science, test prep, ADHD-friendly — Encino, Tarzana, Sherman Oaks & beyond. First call free."
