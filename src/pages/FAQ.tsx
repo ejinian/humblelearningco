@@ -43,7 +43,7 @@ const faqGroups: FAQGroup[] = [
       },
       {
         q: "How long are sessions?",
-        a: "Typically 60 to 90 minutes, adjusted to the student's age, subject, and stamina. Younger students usually do better with 60-minute sessions; older students working through dense material often benefit from 90.",
+        a: "Every session is fully customized to the student's pace, workload, and goals. Sessions can last as long as needed to ensure students feel confident, comfortable, and fully understand the material.",
       },
       {
         q: "How often should my child meet with a tutor?",
