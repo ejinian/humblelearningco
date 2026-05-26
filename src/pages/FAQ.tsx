@@ -47,7 +47,7 @@ const faqGroups: FAQGroup[] = [
       },
       {
         q: "How often should my child meet with a tutor?",
-        a: "Once a week is the most common cadence and works well for ongoing support. Twice a week is better for students who are significantly behind or preparing for a major test in the next 4–8 weeks. We start where you are and adjust as they progress.",
+        a: "How often a student should meet with a tutor depends on their goals, coursework, learning pace, and the level of support they need. After learning about the student's needs, we'll recommend a personalized plan and schedule that best supports their success.",
       },
       {
         q: "Will my child always work with the same tutor?",
