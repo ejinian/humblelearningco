@@ -157,31 +157,33 @@ CI hasn't been wired up. If you add it, run `lint`, `test`, and `build` in that 
 | 2. SEO | **Done (technical).** Off-site actions ongoing. |
 | 3. Paid ads | Future — marketer meeting planned. |
 
-### Technical SEO — COMPLETED (2026-05-15)
+### Technical SEO — COMPLETED (2026-05-15, updated 2026-05-23)
 
 - [x] `react-helmet-async` installed — per-page `<title>` and `<meta description>` on all 5 pages
 - [x] LocalBusiness JSON-LD structured data on homepage (`src/components/StructuredData.tsx`)
-- [x] `public/sitemap.xml` — all 5 routes, submitted to Google Search Console
+- [x] `public/sitemap.xml` — 36 URLs (5 core + 31 neighborhoods), submitted to Google Search Console
 - [x] `public/robots.txt` — points crawlers to sitemap
 - [x] Google Search Console verified (`public/google083a7646bd13ec1b.html`) and sitemap submitted
 - [x] `reviews.ts` updated from 23 → 85 verbatim reviews; `site.ts` reviewCount updated to 100
+- [x] 31 neighborhood landing pages live (`/encino`, `/tarzana`, `/sherman-oaks`, `/beverly-hills`, etc.)
+- [x] Canonical URLs + sitemap fixed to use `www.humblelearningco.com` (matches Vercel primary domain); all page canonicals now use `${site.url}` dynamically
 - [ ] Image optimization — owner converts PNGs to WebP via squoosh.app (7 photos in `public/photos/`)
 - [ ] OG social share image — 1200×630 branded image for link previews (low priority)
 
-### Off-site SEO — owner action required
+### Off-site SEO — status as of 2026-05-23
 
 | Action | Status |
 | --- | --- |
-| Google Business Profile — 3 verified profiles (HUMBLE Learning Co. is the main one) | GBP photos already uploaded (50+). Fill in description, hours, services, Q&A. |
-| Push for more Google reviews from recent clients | Ongoing |
-| Nextdoor listing | Not started |
+| Google Business Profile — description, hours, services, Q&A | ✅ Done |
+| GBP photos | ✅ Done (50+) |
+| Push for more Google reviews from recent clients | 🔄 Ongoing — Tiana texting clients directly |
+| Nextdoor listing | ✅ Done |
+| Yelp listing | ✅ Done |
 | Thumbtack profile | Not started |
-| Yelp listing | Not started |
 
 ### Content SEO — next code phase
 
-- **Neighborhood landing pages** — `/encino`, `/tarzana`, `/sherman-oaks`, `/beverly-hills`, etc. Each targets "[neighborhood] tutor" queries. High SEO value.
-- **FAQ page** — "how much does a tutor cost in LA?", "does Tiana tutor ADHD students?" etc.
+- **FAQ page** — "how much does a tutor cost in LA?", "does Tiana tutor ADHD students?" etc. High SEO value for zero-click queries.
 
 ### Target keywords
 
