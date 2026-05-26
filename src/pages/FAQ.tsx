@@ -15,7 +15,7 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     q: "How do I get started with private tutoring in Los Angeles?",
-    a: "Getting started with private tutoring in Los Angeles is simple. Book a free intro call — no commitment, no paperwork. Tell us what's going on with your student, including their grade level, subjects, and learning style, and together we'll decide whether it's the right fit. Most families across Los Angeles have a fully personalized tutoring plan within a day of that first conversation. The first call is completely free.",
+    a: "Getting started is simple. We begin with a free intro call to learn more about your student's goals, learning style, and academic needs. From there, we create a personalized plan built around the support that will help them thrive. Sessions can begin as soon as you're ready.",
   },
   {
     q: "How much does private tutoring cost in Los Angeles?",
