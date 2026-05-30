@@ -155,9 +155,9 @@ CI hasn't been wired up. If you add it, run `lint`, `test`, and `build` in that 
 | --- | --- |
 | 1. Website | **Done.** |
 | 2. SEO | **Done (technical).** Off-site actions ongoing. |
-| 3. Paid ads | Future — marketer meeting planned. |
+| 3. Paid ads | **In progress** — Google Local Services Ads setup started 2026-05-29. |
 
-### Technical SEO — COMPLETED (2026-05-15, updated 2026-05-23)
+### Technical SEO — COMPLETED (2026-05-15, updated 2026-05-29)
 
 - [x] `react-helmet-async` installed — per-page `<title>` and `<meta description>` on all 5 pages
 - [x] LocalBusiness JSON-LD structured data on homepage (`src/components/StructuredData.tsx`)
@@ -170,20 +170,52 @@ CI hasn't been wired up. If you add it, run `lint`, `test`, and `build` in that 
 - [ ] Image optimization — owner converts PNGs to WebP via squoosh.app (7 photos in `public/photos/`)
 - [ ] OG social share image — 1200×630 branded image for link previews (low priority)
 
-### Off-site SEO — status as of 2026-05-23
+### Off-site SEO — status as of 2026-05-29
 
 | Action | Status |
 | --- | --- |
 | Google Business Profile — description, hours, services, Q&A | ✅ Done |
 | GBP photos | ✅ Done (50+) |
+| GBP name fixed to "HUMBLE Learning Co." (removed keyword stuffing) | ✅ Done 2026-05-29 |
 | Push for more Google reviews from recent clients | 🔄 Ongoing — Tiana texting clients directly |
 | Nextdoor listing | ✅ Done |
 | Yelp listing | ✅ Done |
 | Thumbtack profile | Not started |
+| Google Local Services Ads | 🔄 In progress — background check running, GBP linking pending support ticket |
+
+### GBP cleanup needed (owner action)
+
+- Remove "Computer service" and "Website designer" from GBP secondary categories — these are wrong and may affect LSA eligibility
+- Investigate and delete/unlink two mystery GBP listings appearing under tianahumble000@gmail.com: "HUMBLE Helpers Co. - LA" and "Beverly Hills Tutoring & Academic Support"
+
+### Paid ads — Google Local Services Ads (started 2026-05-29)
+
+**Account:** tianahumble000@gmail.com — LSA Customer ID: HUMBLE 964-522-6449
+
+| Item | Status |
+| --- | --- |
+| Background check (via Evident) | 🔄 In progress — 1–3 business days |
+| Billing | ✅ Complete |
+| Bidding & budget | ✅ Complete |
+| Google Business Profile linking | ⏳ Pending — support ticket submitted via email |
+| Featured professionals (Tiana's photo/bio) | Not started |
+
+**Note:** Chat and phone support were unavailable. Email support ticket submitted 2026-05-29 to manually link GBP to LSA account. Google support can force-link them on their end.
+
+**Also note:** There is an existing paused Google Ads Performance Max campaign "Private Tutoring | Search | Los Angeles" at $20/day under the same account. It has 0 impressions and $0 spent. Do not activate it until Tiana decides whether to run it alongside LSAs.
+
+### Google account map (do not re-derive)
+
+| Email | Purpose |
+| --- | --- |
+| tianahumble000@gmail.com | Google Business Profile manager, Google Ads, Local Services Ads |
+| humblelearnco@gmail.com | Client-facing business email, website contact form, client correspondence |
+| tianahumble2@gmail.com | Not business-related — ignore for all ads/GBP work |
 
 ### Content SEO — next code phase
 
-- **FAQ page** — "how much does a tutor cost in LA?", "does Tiana tutor ADHD students?" etc. High SEO value for zero-click queries.
+- **FAQ page** — ✅ Done (2026-05-25). 14 questions with FAQPage JSON-LD schema at `/faq`.
+- **Subject landing pages** — `/math-tutor-los-angeles`, `/sat-prep-los-angeles`, `/adhd-tutor-los-angeles`, `/reading-tutor-los-angeles`, `/college-essay-tutoring` — highest remaining code priority for keyword targeting.
 
 ### Target keywords
 

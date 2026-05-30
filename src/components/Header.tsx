@@ -29,7 +29,7 @@ export function Header() {
           <span className="font-serif text-[1.7rem] font-bold tracking-wide sm:text-[2.15rem] lg:text-[2.35rem]">
             HUMBLE
           </span>
-          <span className="font-serif text-[0.95rem] font-extrabold uppercase tracking-[0.2em] text-[#6f4208] sm:text-xl lg:text-[1.35rem]">
+          <span className="whitespace-nowrap font-serif text-[0.95rem] font-extrabold uppercase tracking-[0.2em] text-[#6f4208] sm:text-xl lg:text-[1.35rem]">
             Learning Co.
           </span>
         </Link>
