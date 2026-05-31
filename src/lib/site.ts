@@ -30,7 +30,7 @@ export const site = {
 
   rating: {
     stars: 5.0,
-    reviewCount: 100, // approximate count on Google (reviews.ts has the substantive ones)
+    reviewCount: 125, // approximate count on Google (reviews.ts has the substantive ones)
     source: "Google",
   },
 } as const;

@@ -8,6 +8,9 @@ import { ServiceGrid } from "@/components/ServiceGrid";
 import { ReviewCard } from "@/components/ReviewCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { PhotoStrip } from "@/components/PhotoStrip";
+import { StatsStrip } from "@/components/StatsStrip";
+import { PullQuote } from "@/components/PullQuote";
+import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -52,127 +55,137 @@ export default function Home() {
       <StructuredData />
 
       <Hero />
+      <StatsStrip />
 
       {/* Services preview */}
-      <section className="container py-20 md:py-24">
-        <div className="flex items-end justify-between gap-6 flex-wrap">
-          <SectionHeading
-            eyebrow="What we cover"
-            title="Every Subject. Every Age. Any Learning Style."
-            description="From learning concepts, to homework help, tech help, PSAT, SAT, and ACT prep, plus building study skills and organizational skills, we prepare you with real world skills."
-          />
-          <Button asChild variant="link" className="px-0">
-            <Link to="/services">
-              See all subjects
-              <ArrowRight className="size-4" />
-            </Link>
-          </Button>
-        </div>
+      <section className="container py-20 md:py-28">
+        <Reveal>
+          <div className="flex items-end justify-between gap-6 flex-wrap">
+            <SectionHeading
+              eyebrow="What we cover"
+              title="One tutor. Every Subject. Any Age."
+            />
+            <Button asChild variant="link" className="px-0">
+              <Link to="/services">
+                See all subjects
+                <ArrowRight className="size-4" />
+              </Link>
+            </Button>
+          </div>
+        </Reveal>
 
-        <div className="mt-12">
+        <Reveal delay={120} className="mt-12">
           <ServiceGrid items={services.slice(0, 7)} />
-        </div>
+        </Reveal>
       </section>
+
+      <PullQuote />
 
       {/* How it works */}
       <section className="bg-secondary/60 border-y border-border/60">
-        <div className="container py-20 md:py-24">
-          <SectionHeading
-            eyebrow="How it works"
-            title="Three steps. No pressure."
-            description="Tell us where your student feels stuck, and we will map out support that builds confidence, structure, stronger habits, and the skills to feel back in control."
-            align="center"
-            className="mx-auto"
-          />
+        <div className="container py-24 md:py-28">
+          <Reveal>
+            <SectionHeading
+              eyebrow="How it works"
+              title="Three steps. No pressure."
+              description="Tell us where your student feels stuck, and we will map out support that builds confidence, structure, stronger habits, and the skills to feel back in control."
+              align="center"
+              className="mx-auto"
+            />
+          </Reveal>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {stepItems.map((step) => {
+          <div className="mt-14 grid gap-5 md:grid-cols-3">
+            {stepItems.map((step, i) => {
               const Icon = step.icon;
               return (
-                <Card key={step.title} className="border-border/70">
-                  <CardContent className="p-6 space-y-3">
-                    <div className="size-11 rounded-md bg-primary text-primary-foreground grid place-items-center">
-                      <Icon className="size-5" />
-                    </div>
-                    <h3 className="font-serif text-xl font-semibold">
-                      {step.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed text-pretty">
-                      {step.body}
-                    </p>
-                  </CardContent>
-                </Card>
+                <Reveal key={step.title} delay={i * 130}>
+                  <Card className="border-border/70 h-full">
+                    <CardContent className="p-7 space-y-4">
+                      <div className="size-11 rounded-md bg-primary text-primary-foreground grid place-items-center">
+                        <Icon className="size-5" />
+                      </div>
+                      <h3 className="font-serif text-xl font-semibold">
+                        {step.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed text-pretty">
+                        {step.body}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Reveal>
               );
             })}
           </div>
 
-          <div className="mt-10 flex justify-center">
+          <Reveal className="mt-12 flex justify-center">
             <Button asChild size="lg" variant="accent">
               <Link to="/contact">
                 Start with a free intro call
                 <ArrowRight className="size-4" />
               </Link>
             </Button>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Reviews */}
-      <section className="container py-20 md:py-24">
-        <SectionHeading
-          eyebrow="What families say"
-          title="Five stars, in their own words."
-          description="Real reviews from real families on Google — not a single one paraphrased."
-        />
+      <section className="container py-24 md:py-28">
+        <Reveal>
+          <SectionHeading
+            eyebrow="What families say"
+            title="Five stars, in their own words."
+            description="Real reviews from real families on Google — not a single one paraphrased."
+          />
+        </Reveal>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {featuredReviews.map((review, i) => (
-            <ReviewCard key={`${review.name}-${i}`} review={review} />
+            <Reveal key={`${review.name}-${i}`} delay={i * 80}>
+              <ReviewCard review={review} />
+            </Reveal>
           ))}
         </div>
 
-        <div className="mt-10 flex justify-center">
+        <Reveal className="mt-12 flex justify-center">
           <Button asChild variant="outline">
             <Link to="/reviews">
               Read all reviews
               <ArrowRight className="size-4" />
             </Link>
           </Button>
-        </div>
+        </Reveal>
       </section>
 
       {/* Photo strip + final CTA */}
-      <section className="container pb-24">
-        <SectionHeading
-          eyebrow="Inside the sessions"
-          title="Real Students. Real Results."
-          align="center"
-          className="mx-auto"
-        />
+      <section className="container pb-28">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Inside the sessions"
+            title="Real Students. Real Results."
+            align="center"
+            className="mx-auto"
+          />
+        </Reveal>
 
-        <div className="mt-10">
+        <Reveal delay={100} className="mt-10">
           <PhotoStrip count={6} />
-        </div>
+        </Reveal>
 
-        <div className="mt-16 rounded-2xl bg-primary text-primary-foreground p-10 md:p-14 grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
-          <div className="space-y-3">
-            <p className="text-xs uppercase tracking-[0.22em] text-accent font-medium">
-              Ready when you are
-            </p>
-            <h3 className="font-serif text-3xl md:text-4xl font-semibold leading-tight text-balance">
-              Tell us what your student is working on.
+        <Reveal delay={200} className="mt-16">
+          <div className="rounded-2xl bg-primary text-primary-foreground p-6 md:p-8 grid grid-cols-[1fr_auto] items-center gap-6">
+            <h3 className="font-serif text-xl md:text-2xl font-semibold leading-snug text-primary-foreground">
+              Tell me what's going on.
+              <br />
+              We'll take care of the rest.
             </h3>
-            <p className="text-xl font-semibold text-primary-foreground/90 max-w-xl text-pretty leading-relaxed md:text-2xl">
-              FREE Consultation. Get Started Today.
-            </p>
+            <Button asChild size="lg" variant="accent" className="shrink-0">
+              <Link to="/contact">
+                Book a free intro call
+                <ArrowRight className="size-4" />
+              </Link>
+            </Button>
           </div>
-          <Button asChild size="lg" variant="accent">
-            <Link to="/contact">
-              Get in touch
-              <ArrowRight className="size-4" />
-            </Link>
-          </Button>
-        </div>
+        </Reveal>
       </section>
     </div>
   );

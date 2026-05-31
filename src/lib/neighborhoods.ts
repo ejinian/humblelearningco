@@ -27,7 +27,7 @@ export const neighborhoods: Neighborhood[] = [
     name: "Tarzana",
     slug: "tarzana",
     region: "San Fernando Valley",
-    tagline: "Personalized tutoring in Tarzana — one tutor, almost every subject, every age.",
+    tagline: "Personalized tutoring in Tarzana — one tutor, every subject, every age.",
     body: "Tarzana families know how quickly a student can fall behind — and how hard it can be to find support that actually clicks. We work with students from kindergarten through college, covering everything from early reading and basic math to AP courses and college coursework, all in one-on-one sessions built around how your student learns.",
     metaDescription: "Private tutoring in Tarzana, CA — one-on-one academic support for K–12 and college. Math, reading, science, test prep, study skills. Free intro call.",
     nearbyAreas: ["Encino", "Woodland Hills", "Calabasas"],

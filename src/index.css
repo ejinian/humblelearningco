@@ -30,7 +30,7 @@
     --muted: 40 12% 90%;
     --muted-foreground: 0 0% 35%;
 
-    --accent: 38 47% 60%;
+    --accent: 38 52% 46%;
     --accent-foreground: 212 30% 17%;
 
     --destructive: 0 70% 45%;
@@ -70,6 +70,19 @@
   }
 }
 
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, -20px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-fade-up {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -77,6 +90,10 @@
 
   .text-pretty {
     text-wrap: pretty;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 14s ease-in-out infinite;
   }
 
   /* A subtle paper-like grain to give the warm off-white some life */

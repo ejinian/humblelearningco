@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 
 const trustIndicators = [
   "1000+ Students Helped",
-  "119+ 5-Star Reviews",
+  "125+ 5-Star Reviews",
   "All Subjects & Grade Levels",
   "Los Angeles & Online Tutoring",
 ];
@@ -22,11 +22,11 @@ export function Hero() {
         aria-hidden
       />
       <div
-        className="absolute right-0 top-10 hidden h-80 w-80 rounded-full bg-accent/10 blur-3xl lg:block"
+        className="absolute right-0 top-10 hidden h-80 w-80 rounded-full bg-accent/10 blur-3xl lg:block animate-float-slow"
         aria-hidden
       />
       <div
-        className="absolute bottom-0 left-0 hidden h-64 w-64 rounded-full bg-primary/5 blur-3xl lg:block"
+        className="absolute bottom-0 left-0 hidden h-64 w-64 rounded-full bg-primary/5 blur-3xl lg:block animate-float-slow [animation-delay:7s]"
         aria-hidden
       />
 

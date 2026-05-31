@@ -180,7 +180,7 @@ export default function NeighborhoodPage() {
           <SectionHeading
             eyebrow="What we cover"
             title="Every subject. Every age."
-            description="From early reading to college calculus — one tutor, one consistent relationship, almost every subject your student is taking."
+            description="From early reading to college calculus — one tutor, one consistent relationship, every subject your student is taking."
           />
           <Button asChild variant="link" className="px-0">
             <Link to="/services">

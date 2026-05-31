@@ -4,6 +4,7 @@ import { ArrowRight, Check } from "lucide-react";
 
 import { SectionHeading } from "@/components/SectionHeading";
 import { ServiceGrid } from "@/components/ServiceGrid";
+import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/ui/button";
 import { site } from "@/lib/site";
 
@@ -22,72 +23,81 @@ export default function Services() {
         <title>Tutoring Services — Math, Reading, Science, Test Prep | HUMBLE Learning Co.</title>
         <meta
           name="description"
-          content="One tutor, almost every subject. K–12 math, reading, writing, science, SAT/ACT/PSAT prep, homework help, study skills, and college courses in Los Angeles."
+          content="One tutor, every subject. K–12 math, reading, writing, science, SAT/ACT/PSAT prep, homework help, study skills, and college courses in Los Angeles."
         />
         <meta property="og:title" content="Tutoring Services — Math, Reading, Science, Test Prep | HUMBLE Learning Co." />
         <meta
           property="og:description"
-          content="One tutor, almost every subject. K–12 math, reading, writing, science, SAT/ACT/PSAT prep, homework help, study skills, and college courses in Los Angeles."
+          content="One tutor, every subject. K–12 math, reading, writing, science, SAT/ACT/PSAT prep, homework help, study skills, and college courses in Los Angeles."
         />
         <link rel="canonical" href={`${site.url}/services`} />
       </Helmet>
 
       <section className="container py-16 md:py-20">
-        <SectionHeading
-          as="h1"
-          eyebrow="Subjects & services"
-          title="One tutor. Any subject. Any age."
-          description="From early reading to college calculus, PSAT, SAT, ACT prep, study skills, and tech help — support for the skills school expects but does not always teach."
-        />
+        <Reveal>
+          <SectionHeading
+            as="h1"
+            eyebrow="Subjects & services"
+            title="One tutor. Every Subject. Any Age."
+          />
+        </Reveal>
       </section>
 
-      <section className="container pb-16">
-        <ServiceGrid detailed />
+      <section className="container pb-20">
+        <Reveal>
+          <ServiceGrid detailed />
+        </Reveal>
       </section>
 
       <section className="bg-secondary/60 border-y border-border/60">
         <div className="container py-20 grid lg:grid-cols-2 gap-12 items-start">
-          <SectionHeading
-            eyebrow="How sessions work"
-            title="Built for the way real weeks run."
-            description="Flexible enough for busy households. Steady enough to make real progress."
-          />
+          <Reveal>
+            <SectionHeading
+              eyebrow="How sessions work"
+              title="Built for the way real weeks run."
+              description="Flexible enough for busy households. Steady enough to make real progress."
+            />
+          </Reveal>
 
-          <ul className="space-y-3">
-            {formats.map((item) => (
-              <li
-                key={item}
-                className="flex items-start gap-3 text-foreground/90"
-              >
-                <span
-                  className="mt-1 size-5 grid place-items-center rounded-full bg-accent/20 text-accent ring-1 ring-accent/30 shrink-0"
-                  aria-hidden
+          <Reveal delay={100}>
+            <ul className="space-y-3">
+              {formats.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-foreground/90"
                 >
-                  <Check className="size-3.5" strokeWidth={3} />
-                </span>
-                <span className="leading-relaxed">{item}</span>
-              </li>
-            ))}
-          </ul>
+                  <span
+                    className="mt-1 size-5 grid place-items-center rounded-full bg-accent/20 text-accent ring-1 ring-accent/30 shrink-0"
+                    aria-hidden
+                  >
+                    <Check className="size-3.5" strokeWidth={3} />
+                  </span>
+                  <span className="leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </div>
       </section>
 
       <section className="container py-20 md:py-24 text-center">
-        <SectionHeading
-          eyebrow="Not sure where to start?"
-          title="We'll help you figure it out."
-          description="Even if you can't name the problem, we can. The first call is free."
-          align="center"
-          className="mx-auto"
-        />
-        <div className="mt-8 flex justify-center">
-          <Button asChild size="lg" variant="accent">
-            <Link to="/contact">
-              Book a free intro call
-              <ArrowRight className="size-4" />
-            </Link>
-          </Button>
-        </div>
+        <Reveal>
+          <SectionHeading
+            eyebrow="Not sure where to start?"
+            title="We'll help you figure it out."
+            description="Even if you can't name the problem, we can. The first call is free."
+            align="center"
+            className="mx-auto"
+          />
+          <div className="mt-8 flex justify-center">
+            <Button asChild size="lg" variant="accent">
+              <Link to="/contact">
+                Book a free intro call
+                <ArrowRight className="size-4" />
+              </Link>
+            </Button>
+          </div>
+        </Reveal>
       </section>
     </div>
   );

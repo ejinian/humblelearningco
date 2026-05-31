@@ -48,7 +48,7 @@ export default function Contact() {
           as="h1"
           eyebrow="Get in touch"
           title="Tell us about your student."
-          description="A few sentences is plenty. What they're working on. What's been hard. What you're hoping for. We reply within a day."
+          description="What they're working on. What's been hard. That's enough to start."
         />
       </section>
 
