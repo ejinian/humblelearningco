@@ -43,6 +43,15 @@ const neighborhoodRedirects: Record<string, string> = {
   "palos-verdes-estates": "palos-verdes-estates-tutoring",
   "rancho-palos-verdes": "rancho-palos-verdes-tutoring",
   "rolling-hills": "rolling-hills-tutoring",
+  "malibu": "malibu-tutoring",
+  "westwood": "westwood-tutoring",
+  "los-feliz": "los-feliz-tutoring",
+  "hancock-park": "hancock-park-tutoring",
+  "thousand-oaks": "thousand-oaks-tutoring",
+  "torrance": "torrance-tutoring",
+  "granada-hills": "granada-hills-tutoring",
+  "chatsworth": "chatsworth-tutoring",
+  "hollywood-hills": "hollywood-hills-tutoring",
 };
 
 export default function App() {
