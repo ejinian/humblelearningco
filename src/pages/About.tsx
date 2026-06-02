@@ -63,12 +63,12 @@ export default function About() {
         <title>About Tiana — Founder & Tutor | HUMBLE Learning Co.</title>
         <meta
           name="description"
-          content="Meet Tiana, founder of HUMBLE Learning Co. She started HUMBLE for students who are capable of far more than they believe — one-on-one tutoring in Los Angeles and online."
+          content="Meet Tiana, founder of HUMBLE Learning Co. One-on-one tutoring in Los Angeles for students who are capable of far more than they believe. First call free."
         />
         <meta property="og:title" content="About Tiana — Founder & Tutor | HUMBLE Learning Co." />
         <meta
           property="og:description"
-          content="Meet Tiana, founder of HUMBLE Learning Co. She started HUMBLE for students who are capable of far more than they believe — one-on-one tutoring in Los Angeles and online."
+          content="Meet Tiana, founder of HUMBLE Learning Co. One-on-one tutoring in Los Angeles for students who are capable of far more than they believe. First call free."
         />
         <link rel="canonical" href={`${site.url}/about`} />
       </Helmet>

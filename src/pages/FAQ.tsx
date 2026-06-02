@@ -5,6 +5,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { StarRating } from "@/components/StarRating";
+import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -180,15 +181,17 @@ export default function FAQ() {
 
       {/* Header — centered */}
       <section className="container pt-16 pb-12 md:pt-20 md:pb-14 text-center">
-        <h1 className="font-serif text-4xl font-semibold text-primary md:text-5xl">
-          Frequently Asked Questions
-        </h1>
-        <div className="mt-5 flex items-center justify-center gap-2.5 text-sm">
-          <StarRating value={site.rating.stars} size={18} />
-          <span className="font-semibold text-primary">{site.rating.stars.toFixed(1)} Rating</span>
-          <span className="text-muted-foreground/50 select-none">•</span>
-          <span className="text-muted-foreground font-medium">{site.rating.reviewCount}+ Reviews</span>
-        </div>
+        <Reveal>
+          <h1 className="font-serif text-4xl font-semibold text-primary md:text-5xl">
+            Frequently Asked Questions
+          </h1>
+          <div className="mt-5 flex items-center justify-center gap-2.5 text-sm">
+            <StarRating value={site.rating.stars} size={18} />
+            <span className="font-semibold text-primary">{site.rating.stars.toFixed(1)} Rating</span>
+            <span className="text-muted-foreground/50 select-none">•</span>
+            <span className="text-muted-foreground font-medium">{site.rating.reviewCount}+ Reviews</span>
+          </div>
+        </Reveal>
       </section>
 
       {/* FAQ accordion — centered */}

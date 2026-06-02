@@ -14,12 +14,12 @@ export default function Reviews() {
   return (
     <div>
       <Helmet>
-        <title>130+ Five-Star Google Reviews | HUMBLE Learning Co.</title>
+        <title>130+ Five-Star Reviews — Los Angeles Tutor | HUMBLE Learning Co.</title>
         <meta
           name="description"
           content="Read what students and families across Los Angeles say about HUMBLE Learning Co. — 130+ five-star Google reviews from real sessions."
         />
-        <meta property="og:title" content="130+ Five-Star Google Reviews | HUMBLE Learning Co." />
+        <meta property="og:title" content="130+ Five-Star Reviews — Los Angeles Tutor | HUMBLE Learning Co." />
         <meta
           property="og:description"
           content="Read what students and families across Los Angeles say about HUMBLE Learning Co. — 130+ five-star Google reviews from real sessions."
