@@ -35,7 +35,7 @@ export const reviews: Review[] = [
     badge: "2 reviews",
     body: "I rarely write reviews, but Tiana, the founder of Humble Learning Co., is truly AMAZING!! She deserves 10-stars!! I had to learn how to create an AI Agent for a job interview, and Tiana got me a finished product in 2 hours and I now can create AI Agents by myself. Tiana is one of the most intelligent young person that I have ever met. She is patient and caring and most importantly a phenomenal teacher! I highly recommend her for any subject for a person of any age. She is worth every penny! David (a CEO and Harvard MBA).",
     featuredExcerpt:
-      "I had to learn how to create an AI Agent for a job interview, and Tiana got me a finished product in 2 hours. She is patient, caring, and most importantly a phenomenal teacher.",
+      "I had to learn how to create an AI Agent for a job interview, and Tiana got me a finished product in 2 hours. She is one of the most intelligent young people I have ever met — and most importantly a phenomenal teacher. — David (a CEO and Harvard MBA)",
   },
   {
     name: "Justin Lubert",
@@ -649,13 +649,12 @@ export const reviews: Review[] = [
  * personalization, confidence, overwhelm relief, and measurable results.
  */
 const featuredReviewNames = [
-  "Abo G",
+  "David Preuss",
   "Justin Lubert",
+  "Abo G",
   "Martin Anderson",
   "Sofia Tolentino",
   "Vilen Torabian",
-  "Alexander Ohanian",
-  "David Preuss",
 ] as const;
 
 export const featuredReviews = featuredReviewNames.map((name) => {

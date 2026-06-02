@@ -9,11 +9,10 @@ import { Button } from "@/components/ui/button";
 import { site } from "@/lib/site";
 
 const formats = [
-  "One-on-one. Never group classes.",
-  "In person across LA, or online.",
-  "Weekly recurring or drop-in as needed.",
-  "Parent updates after every session.",
-  "Flexible around school and activities.",
+  "In-person or online",
+  "One-on-one sessions — always",
+  "Flexible scheduling around your family",
+  "Progress updates after every session",
 ];
 
 export default function Services() {
@@ -37,25 +36,25 @@ export default function Services() {
         <Reveal>
           <SectionHeading
             as="h1"
-            eyebrow="Subjects & services"
-            title="One tutor. Every Subject. Any Age."
+            eyebrow="What we help with"
+            title="Personalized Tutoring For Every Student."
           />
+          <p className="mt-4 text-sm font-medium text-muted-foreground tracking-wide">
+            Math &nbsp;·&nbsp; Reading &nbsp;·&nbsp; Writing &nbsp;·&nbsp; Science &nbsp;·&nbsp; Test Prep &nbsp;·&nbsp; Study Skills &nbsp;·&nbsp; Technology
+          </p>
         </Reveal>
       </section>
 
       <section className="container pb-20">
-        <Reveal>
-          <ServiceGrid detailed />
-        </Reveal>
+        <ServiceGrid detailed />
       </section>
 
       <section className="bg-secondary/60 border-y border-border/60">
         <div className="container py-20 grid lg:grid-cols-2 gap-12 items-start">
           <Reveal>
             <SectionHeading
-              eyebrow="How sessions work"
-              title="Built for the way real weeks run."
-              description="Flexible enough for busy households. Steady enough to make real progress."
+              eyebrow="Flexibility"
+              title="Learning That Works Around Your Life."
             />
           </Reveal>
 
@@ -85,7 +84,6 @@ export default function Services() {
           <SectionHeading
             eyebrow="Not sure where to start?"
             title="We'll help you figure it out."
-            description="Even if you can't name the problem, we can. The first call is free."
             align="center"
             className="mx-auto"
           />

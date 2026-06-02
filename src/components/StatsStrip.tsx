@@ -1,5 +1,6 @@
 import { useCountUp } from "@/hooks/useCountUp";
 import { useInView } from "@/hooks/useInView";
+import { Reveal } from "@/components/Reveal";
 
 interface StatItem {
   end?: number;
@@ -9,7 +10,7 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
-  { end: 125, suffix: "+", label: "Five-star reviews" },
+  { end: 130, suffix: "+", label: "Five-star reviews" },
   { end: 1000, suffix: "+", label: "Students helped" },
   { display: "1:1", label: "Always one-on-one" },
   { display: "K–College", label: "Every grade level" },
@@ -35,17 +36,16 @@ export function StatsStrip() {
       <div className="container py-8 md:py-10">
         <dl className="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4">
           {stats.map((stat, i) => (
-            <div
-              key={stat.label}
-              className={`text-center ${i > 0 ? "md:border-l md:border-border/30" : ""}`}
-            >
-              <dt className="font-serif text-4xl font-black text-primary md:text-5xl">
-                <AnimatedStat end={stat.end} suffix={stat.suffix} display={stat.display} />
-              </dt>
-              <dd className="mt-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                {stat.label}
-              </dd>
-            </div>
+            <Reveal key={stat.label} delay={i * 80}>
+              <div className={`text-center ${i > 0 ? "md:border-l md:border-border/30" : ""}`}>
+                <dt className="font-serif text-4xl font-black text-primary md:text-5xl">
+                  <AnimatedStat end={stat.end} suffix={stat.suffix} display={stat.display} />
+                </dt>
+                <dd className="mt-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                  {stat.label}
+                </dd>
+              </div>
+            </Reveal>
           ))}
         </dl>
       </div>

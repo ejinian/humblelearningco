@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Mail } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { heroPhoto } from "@/lib/photos";
@@ -7,12 +7,10 @@ import { site } from "@/lib/site";
 
 const trustIndicators = [
   "1000+ Students Helped",
-  "125+ 5-Star Reviews",
+  "130+ 5-Star Reviews",
   "All Subjects & Grade Levels",
   "Los Angeles & Online Tutoring",
 ];
-
-const contactHref = `mailto:${site.contact.email}`;
 
 export function Hero() {
   return (
@@ -32,7 +30,7 @@ export function Hero() {
 
       <div className="container grid min-h-[calc(100svh-5rem)] gap-11 py-12 md:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(390px,0.78fr)] lg:items-center lg:gap-14 lg:py-20">
         <div className="max-w-[44rem] animate-fade-up text-center lg:text-left">
-          <h1 className="font-serif text-[2.85rem] font-black leading-[1.02] text-primary text-balance sm:text-6xl lg:text-[4.85rem] xl:text-[5.15rem]">
+          <h1 className="font-serif text-[2.2rem] font-black leading-[1.02] text-primary text-balance sm:text-[3.5rem] lg:text-[4.85rem] xl:text-[5.15rem]">
             Personalized Learning.
             <br />
             <span className="text-accent">Proven Results.</span>
@@ -66,10 +64,10 @@ export function Hero() {
               variant="outline"
               className="h-[3.35rem] rounded-md border-primary/25 bg-card/55 px-7 text-base font-semibold shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/45 hover:bg-primary hover:shadow-lg hover:shadow-primary/10"
             >
-              <a href={contactHref}>
-                <Mail className="size-4" />
-                Contact Us
-              </a>
+              <Link to="/services">
+                See All Subjects
+                <ArrowRight className="size-4" />
+              </Link>
             </Button>
           </div>
 
@@ -117,7 +115,7 @@ export function Hero() {
               </span>
               <div className="leading-tight">
                 <div className="text-sm font-semibold text-primary">
-                  Trusted by local families
+                  Trusted by 130+ LA families
                 </div>
                 <div className="text-xs text-muted-foreground">
                   Personalized support from {site.founder}

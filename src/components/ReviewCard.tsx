@@ -19,8 +19,8 @@ function initials(name: string) {
 
 export function ReviewCard({ review, className }: ReviewCardProps) {
   return (
-    <Card className={cn("h-full flex flex-col", className)}>
-      <CardContent className="flex flex-col gap-4 p-6 pt-6 flex-1">
+    <Card className={cn("h-full flex flex-col transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_12px_32px_hsl(var(--primary)/0.10)] motion-reduce:transition-none", className)}>
+      <CardContent className="flex flex-col gap-5 p-7 flex-1">
         <Quote
           className="size-6 text-accent shrink-0"
           aria-hidden="true"
@@ -43,7 +43,7 @@ export function ReviewCard({ review, className }: ReviewCardProps) {
           <div className="min-w-0">
             <div className="font-medium text-primary truncate">{review.name}</div>
             <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <StarRating value={review.stars} size={12} />
+              <StarRating value={review.stars} size={14} />
               <span>·</span>
               <span>{review.age}</span>
             </div>

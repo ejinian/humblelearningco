@@ -9,6 +9,8 @@ import {
   Sparkles,
 } from "lucide-react";
 
+import { Reveal } from "@/components/Reveal";
+
 import { SectionHeading } from "@/components/SectionHeading";
 import { ServiceGrid } from "@/components/ServiceGrid";
 import { ReviewCard } from "@/components/ReviewCard";
@@ -40,6 +42,17 @@ const steps = [
   },
 ];
 
+function toAreaSlug(displayName: string) {
+  return `${displayName.toLowerCase().replace(/\s+/g, "-")}-tutoring`;
+}
+
+function formatList(items: string[]): string {
+  if (items.length === 0) return "";
+  if (items.length === 1) return items[0];
+  if (items.length === 2) return `${items[0]} and ${items[1]}`;
+  return `${items.slice(0, -1).join(", ")}, and ${items[items.length - 1]}`;
+}
+
 export default function NeighborhoodPage() {
   const { slug } = useParams<{ slug: string }>();
   const neighborhood = getNeighborhood(slug ?? "");
@@ -47,7 +60,7 @@ export default function NeighborhoodPage() {
   if (!neighborhood) return <NotFound />;
 
   const canonicalUrl = `${site.url}/${neighborhood.slug}`;
-  const pageTitle = `Private Tutor in ${neighborhood.name}, CA | HUMBLE Learning Co.`;
+  const pageTitle = `Private Tutoring in ${neighborhood.name} | HUMBLE Learning Co.`;
 
   const trustIndicators = [
     "1000+ Students Helped",
@@ -55,6 +68,56 @@ export default function NeighborhoodPage() {
     "All Subjects & Grade Levels",
     `Serving ${neighborhood.name} & Beyond`,
   ];
+
+  const faqs = [
+    {
+      q: `Do you offer in-person tutoring in ${neighborhood.name}?`,
+      a: `Yes — we offer both in-person and online one-on-one tutoring sessions in ${neighborhood.name} and throughout ${neighborhood.region}. We schedule around your family's availability, including evenings and weekends.`,
+    },
+    {
+      q: `What subjects do you tutor in ${neighborhood.name}?`,
+      a: `We cover all major K–12 and college subjects including math (through AP Calculus and AP Statistics), reading, writing, science (Biology, Chemistry, Physics), and test prep for the SAT, ACT, and AP exams. We also offer academic coaching and study skills support for students who need help with organization, focus, or executive function.`,
+    },
+    {
+      q: `How do I get started with tutoring in ${neighborhood.name}?`,
+      a: `The first step is a free intro call — no commitment required. We'll talk about your student's situation, what they're working on, and what kind of support would help most. From there, we build a custom plan that fits your schedule and your student's specific needs.`,
+    },
+  ];
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": `${site.url}/#business`,
+        name: "HUMBLE Learning Co.",
+        description: `One-on-one tutoring for K–12 and college students in ${neighborhood.name} and throughout Los Angeles.`,
+        url: canonicalUrl,
+        telephone: site.contact.phone,
+        email: site.contact.email,
+        priceRange: "$$",
+        areaServed: {
+          "@type": "City",
+          name: neighborhood.name,
+          addressRegion: "CA",
+          addressCountry: "US",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: String(site.rating.stars),
+          reviewCount: String(site.rating.reviewCount),
+        },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqs.map(({ q, a }) => ({
+          "@type": "Question",
+          name: q,
+          acceptedAnswer: { "@type": "Answer", text: a },
+        })),
+      },
+    ],
+  };
 
   return (
     <div>
@@ -64,6 +127,9 @@ export default function NeighborhoodPage() {
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={neighborhood.metaDescription} />
         <link rel="canonical" href={canonicalUrl} />
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
       </Helmet>
 
       {/* Hero — mirrors homepage Hero layout */}
@@ -100,6 +166,13 @@ export default function NeighborhoodPage() {
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 text-pretty lg:mx-0">
               {neighborhood.body}
             </p>
+
+            {neighborhood.schools.length > 0 && (
+              <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-foreground/60 text-pretty lg:mx-0">
+                We regularly work with students from{" "}
+                <span className="text-foreground/80">{formatList(neighborhood.schools)}</span>.
+              </p>
+            )}
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center lg:justify-start">
               <Button
@@ -197,66 +270,101 @@ export default function NeighborhoodPage() {
       {/* How it works */}
       <section className="bg-secondary/60 border-y border-border/60">
         <div className="container py-20 md:py-24">
-          <SectionHeading
-            eyebrow="How it works"
-            title="Three steps. No pressure."
-            description="Tell us where your student is stuck and we'll map out support that builds confidence, stronger habits, and real academic skills."
-            align="center"
-            className="mx-auto"
-          />
+          <Reveal>
+            <SectionHeading
+              eyebrow="How it works"
+              title="Three steps. No pressure."
+              description="Tell us where your student is stuck and we'll map out support that builds confidence, stronger habits, and real academic skills."
+              align="center"
+              className="mx-auto"
+            />
+          </Reveal>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {steps.map((step) => {
+            {steps.map((step, i) => {
               const Icon = step.icon;
               return (
-                <Card key={step.title} className="border-border/70">
-                  <CardContent className="p-6 space-y-3">
-                    <div className="size-11 rounded-md bg-primary text-primary-foreground grid place-items-center">
-                      <Icon className="size-5" />
-                    </div>
-                    <h3 className="font-serif text-xl font-semibold">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed text-pretty">
-                      {step.body}
-                    </p>
-                  </CardContent>
-                </Card>
+                <Reveal key={step.title} delay={i * 130}>
+                  <Card className="border-border/70 h-full transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_24px_hsl(var(--primary)/0.07)] motion-reduce:transition-none">
+                    <CardContent className="p-7 space-y-4">
+                      <div className="size-11 rounded-md bg-primary text-primary-foreground grid place-items-center">
+                        <Icon className="size-5" />
+                      </div>
+                      <h3 className="font-serif text-xl font-semibold">{step.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed text-pretty">
+                        {step.body}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Reveal>
               );
             })}
           </div>
-          <div className="mt-10 flex justify-center">
+          <Reveal className="mt-10 flex justify-center">
             <Button asChild size="lg" variant="accent">
               <Link to="/contact">
                 Start with a free intro call
                 <ArrowRight className="size-4" />
               </Link>
             </Button>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Reviews */}
       <section className="container py-20 md:py-24">
-        <SectionHeading
-          eyebrow="What families say"
-          title="Five stars, in their own words."
-          description="Real reviews from students and parents across Los Angeles — not a single one paraphrased."
-        />
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Reviews"
+            title="What Students & Families Are Saying."
+          />
+        </Reveal>
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {featuredReviews.slice(0, 3).map((review, i) => (
-            <ReviewCard key={`${review.name}-${i}`} review={review} />
+            <Reveal key={`${review.name}-${i}`} delay={i * 80} className="h-full">
+              <ReviewCard review={review} />
+            </Reveal>
           ))}
         </div>
-        <div className="mt-10 flex justify-center">
-          <Button asChild variant="outline">
+        <Reveal className="mt-10 flex justify-center">
+          <Button asChild variant="outline" size="lg" className="group border-primary/25 hover:border-primary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-200">
             <Link to="/reviews">
-              Read all reviews
-              <ArrowRight className="size-4" />
+              View All 130+ Reviews
+              <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
           </Button>
+        </Reveal>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-secondary/60 border-y border-border/60">
+        <div className="container py-20 md:py-24">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Common questions"
+              title={`Tutoring in ${neighborhood.name} — FAQs`}
+              align="center"
+              className="mx-auto"
+            />
+          </Reveal>
+          <div className="mt-12 max-w-3xl mx-auto space-y-6">
+            {faqs.map((faq, i) => (
+              <Reveal key={i} delay={i * 80}>
+                <div className="rounded-xl border border-border/70 bg-card p-6 md:p-7 shadow-sm">
+                  <h3 className="font-serif text-lg font-semibold text-primary leading-snug">
+                    {faq.q}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-foreground/75 text-pretty">
+                    {faq.a}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* CTA + nearby areas */}
-      <section className="container pb-24">
+      <section className="container py-20 md:py-24">
         <div className="rounded-2xl bg-primary text-primary-foreground p-10 md:p-14 grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
           <div className="space-y-3">
             <p className="text-xs uppercase tracking-[0.22em] text-accent font-medium">
@@ -275,7 +383,7 @@ export default function NeighborhoodPage() {
                 {neighborhood.nearbyAreas.map((area, i) => (
                   <span key={area}>
                     <Link
-                      to={`/${area.toLowerCase().replace(/\s+/g, "-")}`}
+                      to={`/${toAreaSlug(area)}`}
                       className="underline underline-offset-2 hover:text-accent transition-colors"
                     >
                       {area}

@@ -14,7 +14,7 @@ export function Footer() {
             <span className="font-serif text-xl font-semibold tracking-wide">
               HUMBLE
             </span>
-            <span className="font-serif text-sm font-bold uppercase tracking-[0.2em] text-[#f2c86d]">
+            <span className="font-serif text-sm font-bold uppercase tracking-[0.2em] text-accent">
               Learning Co.
             </span>
           </div>
@@ -33,6 +33,7 @@ export function Footer() {
               { to: "/about", label: "About Tiana" },
               { to: "/services", label: "Subjects & Services" },
               { to: "/reviews", label: "Family Reviews" },
+              { to: "/faq", label: "FAQ" },
               { to: "/contact", label: "Book a Session" },
             ].map((l) => (
               <li key={l.to}>

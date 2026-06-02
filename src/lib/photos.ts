@@ -10,27 +10,27 @@ export interface Photo {
 export const photos: Photo[] = [
   {
     src: "/photos/tutoring-01.png",
-    alt: "Tiana smiling with a student during a tutoring session.",
+    alt: "Tiana, founder of HUMBLE Learning Co., smiling with a student during a one-on-one tutoring session in Los Angeles.",
   },
   {
     src: "/photos/tutoring-07.png",
-    alt: "Young student smiling during a personalized learning activity.",
+    alt: "Student smiling and engaged during a personalized learning session with HUMBLE Learning Co. in Los Angeles.",
   },
   {
     src: "/photos/tutoring-02.png",
-    alt: "Tiana and a student reviewing notes together at a study session.",
+    alt: "Tiana reviewing notes with a student during a private tutoring session in Los Angeles.",
   },
   {
     src: "/photos/tutoring-04.png",
-    alt: "Tiana and a student studying together at a co-working space.",
+    alt: "Tiana and a student working together at a study session — one-on-one tutoring in Los Angeles.",
   },
   {
     src: "/photos/tutoring-05.png",
-    alt: "Tiana helping a student with tech help during a tutoring session.",
+    alt: "Tiana helping a student during a personalized tutoring session at HUMBLE Learning Co.",
   },
   {
     src: "/photos/tutoring-06.png",
-    alt: "Tiana helping a young student during a personalized learning activity.",
+    alt: "Tiana working with a young student in a calm, focused one-on-one learning environment.",
   },
 ];
 
@@ -40,5 +40,5 @@ export const heroPhoto = photos[0];
 /** Founder portrait used only on the About page. */
 export const founderPhoto: Photo = {
   src: "/photos/tutoring-03.png",
-  alt: "Portrait of Tiana, founder of HUMBLE Learning Co.",
+  alt: "Portrait of Tiana Humble, founder and tutor at HUMBLE Learning Co. in Los Angeles.",
 };

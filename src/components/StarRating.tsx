@@ -13,7 +13,7 @@ interface StarRatingProps {
 export function StarRating({
   value = 5,
   outOf = 5,
-  size = 16,
+  size = 18,
   className,
   ariaLabel,
 }: StarRatingProps) {

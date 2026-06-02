@@ -39,192 +39,204 @@
   </url>
   <!-- San Fernando Valley -->
   <url>
-    <loc>https://www.humblelearningco.com/encino</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/encino-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.humblelearningco.com/tarzana-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.humblelearningco.com/sherman-oaks-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.humblelearningco.com/studio-city-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.humblelearningco.com/woodland-hills-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.humblelearningco.com/calabasas-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.humblelearningco.com/porter-ranch-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/tarzana</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.humblelearningco.com/sherman-oaks</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.humblelearningco.com/studio-city</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.humblelearningco.com/woodland-hills</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.humblelearningco.com/calabasas</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.humblelearningco.com/porter-ranch</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.humblelearningco.com/northridge</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/northridge-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- Conejo Valley -->
   <url>
-    <loc>https://www.humblelearningco.com/westlake-village</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/westlake-village-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/agoura-hills</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/agoura-hills-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/hidden-hills</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/hidden-hills-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- Glendale / Burbank / Pasadena corridor -->
   <url>
-    <loc>https://www.humblelearningco.com/glendale</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/glendale-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/burbank</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/burbank-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/pasadena</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/pasadena-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/south-pasadena</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/south-pasadena-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/san-marino</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/san-marino-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/la-canada-flintridge</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/la-canada-flintridge-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- Westside -->
   <url>
-    <loc>https://www.humblelearningco.com/beverly-hills</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/beverly-hills-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.humblelearningco.com/bel-air-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/bel-air</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/holmby-hills-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/holmby-hills</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/brentwood-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/brentwood</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/pacific-palisades-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/pacific-palisades</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/santa-monica-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.humblelearningco.com/west-hollywood-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/santa-monica</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/marina-del-rey-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/marina-del-rey</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/culver-city-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/culver-city</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/los-angeles-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <!-- South Bay -->
   <url>
-    <loc>https://www.humblelearningco.com/manhattan-beach</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/manhattan-beach-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/redondo-beach</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/redondo-beach-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/hermosa-beach</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/hermosa-beach-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/palos-verdes-estates</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/palos-verdes-estates-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/rancho-palos-verdes</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/rancho-palos-verdes-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.humblelearningco.com/rolling-hills</loc>
-    <lastmod>2026-05-15</lastmod>
+    <loc>https://www.humblelearningco.com/rolling-hills-tutoring</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

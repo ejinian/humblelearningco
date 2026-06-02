@@ -3,6 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 import { SectionHeading } from "@/components/SectionHeading";
 import { ContactForm } from "@/components/ContactForm";
+import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/site";
 
 const channels = [
@@ -43,18 +44,20 @@ export default function Contact() {
         <link rel="canonical" href={`${site.url}/contact`} />
       </Helmet>
 
-      <section className="container py-16 md:py-20">
-        <SectionHeading
-          as="h1"
-          eyebrow="Get in touch"
-          title="Tell us about your student."
-          description="What they're working on. What's been hard. That's enough to start."
-        />
+      <section className="container py-12 md:py-20">
+        <Reveal>
+          <SectionHeading
+            as="h1"
+            eyebrow="Get in touch"
+            title="Tell us about your student."
+            description="What they're working on. What's been hard. That's enough to start."
+          />
+        </Reveal>
       </section>
 
-      <section className="container pb-24">
-        <div className="grid lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-5 space-y-8">
+      <section className="container pb-20 md:pb-28">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+          <Reveal className="lg:col-span-5 space-y-6">
             <div className="space-y-4">
               {channels.map((c) => {
                 const Icon = c.icon;
@@ -98,11 +101,11 @@ export default function Contact() {
                 we'll point you to someone who is.
               </p>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="lg:col-span-7">
+          <Reveal delay={120} className="lg:col-span-7">
             <ContactForm />
-          </div>
+          </Reveal>
         </div>
       </section>
     </div>

@@ -6,6 +6,7 @@ import { Hero } from "@/components/Hero";
 import { StructuredData } from "@/components/StructuredData";
 import { ServiceGrid } from "@/components/ServiceGrid";
 import { ReviewCard } from "@/components/ReviewCard";
+import { StarRating } from "@/components/StarRating";
 import { SectionHeading } from "@/components/SectionHeading";
 import { PhotoStrip } from "@/components/PhotoStrip";
 import { StatsStrip } from "@/components/StatsStrip";
@@ -62,8 +63,8 @@ export default function Home() {
         <Reveal>
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <SectionHeading
-              eyebrow="What we cover"
-              title="One tutor. Every Subject. Any Age."
+              eyebrow="What we help with"
+              title="Personalized Tutoring For Every Student."
             />
             <Button asChild variant="link" className="px-0">
               <Link to="/services">
@@ -74,9 +75,7 @@ export default function Home() {
           </div>
         </Reveal>
 
-        <Reveal delay={120} className="mt-12">
-          <ServiceGrid items={services.slice(0, 7)} />
-        </Reveal>
+        <ServiceGrid items={services} className="mt-12" />
       </section>
 
       <PullQuote />
@@ -99,7 +98,7 @@ export default function Home() {
               const Icon = step.icon;
               return (
                 <Reveal key={step.title} delay={i * 130}>
-                  <Card className="border-border/70 h-full">
+                  <Card className="border-border/70 h-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_24px_hsl(var(--primary)/0.07)] motion-reduce:transition-none">
                     <CardContent className="p-7 space-y-4">
                       <div className="size-11 rounded-md bg-primary text-primary-foreground grid place-items-center">
                         <Icon className="size-5" />
@@ -132,32 +131,37 @@ export default function Home() {
       <section className="container py-24 md:py-28">
         <Reveal>
           <SectionHeading
-            eyebrow="What families say"
-            title="Five stars, in their own words."
-            description="Real reviews from real families on Google — not a single one paraphrased."
+            eyebrow="Reviews"
+            title="What Students & Families Are Saying."
           />
+          <div className="mt-4 flex items-center gap-2.5 text-sm">
+            <StarRating value={5} size={18} />
+            <span className="font-semibold text-primary">5.0 Rating</span>
+            <span className="text-border/80 select-none">·</span>
+            <span className="text-muted-foreground font-medium">130+ Google Reviews</span>
+          </div>
         </Reveal>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {featuredReviews.map((review, i) => (
-            <Reveal key={`${review.name}-${i}`} delay={i * 80}>
+            <Reveal key={`${review.name}-${i}`} delay={i * 80} className="h-full">
               <ReviewCard review={review} />
             </Reveal>
           ))}
         </div>
 
-        <Reveal className="mt-12 flex justify-center">
-          <Button asChild variant="outline">
+        <Reveal className="mt-10 flex justify-center">
+          <Button asChild variant="outline" size="lg" className="group border-primary/25 hover:border-primary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-200">
             <Link to="/reviews">
-              Read all reviews
-              <ArrowRight className="size-4" />
+              View All 130+ Reviews
+              <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
           </Button>
         </Reveal>
       </section>
 
       {/* Photo strip + final CTA */}
-      <section className="container pb-28">
+      <section className="container pb-20">
         <Reveal>
           <SectionHeading
             eyebrow="Inside the sessions"
@@ -168,17 +172,17 @@ export default function Home() {
         </Reveal>
 
         <Reveal delay={100} className="mt-10">
-          <PhotoStrip count={6} />
+          <PhotoStrip count={4} />
         </Reveal>
 
         <Reveal delay={200} className="mt-16">
-          <div className="rounded-2xl bg-primary text-primary-foreground p-6 md:p-8 grid grid-cols-[1fr_auto] items-center gap-6">
-            <h3 className="font-serif text-xl md:text-2xl font-semibold leading-snug text-primary-foreground">
+          <div className="rounded-2xl bg-primary text-primary-foreground p-6 md:p-8 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+            <h3 className="font-serif text-xl md:text-2xl font-semibold leading-snug text-primary-foreground text-balance">
               Tell me what's going on.
-              <br />
+              <br className="hidden sm:block" />
               We'll take care of the rest.
             </h3>
-            <Button asChild size="lg" variant="accent" className="shrink-0">
+            <Button asChild size="lg" variant="accent" className="shrink-0 self-start sm:self-auto">
               <Link to="/contact">
                 Book a free intro call
                 <ArrowRight className="size-4" />

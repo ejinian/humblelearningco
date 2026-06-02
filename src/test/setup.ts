@@ -9,6 +9,15 @@ afterEach(() => {
 // jsdom doesn't implement window.scrollTo — Layout calls it on route change.
 window.scrollTo = (() => {}) as typeof window.scrollTo;
 
+// jsdom doesn't implement IntersectionObserver — stub so hooks don't throw.
+if (!window.IntersectionObserver) {
+  window.IntersectionObserver = class {
+    observe() {}
+    disconnect() {}
+    unobserve() {}
+  } as unknown as typeof IntersectionObserver;
+}
+
 // jsdom doesn't implement matchMedia / IntersectionObserver — stub minimally.
 if (!window.matchMedia) {
   window.matchMedia = (query: string) =>
