@@ -3,6 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ChatWidget } from "@/components/ChatWidget";
 
 /** Resets scroll on route change. */
 function ScrollToTop() {
@@ -28,6 +29,7 @@ export function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <ChatWidget />
     </div>
   );
 }
