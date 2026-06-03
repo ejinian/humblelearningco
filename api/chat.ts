@@ -83,7 +83,7 @@ TONE
 ════════════════════════════════════════
 Warm, direct, and parent-friendly. Lead with the student's situation, not credentials. Don't be salesy or pushy. The reviews speak for themselves.`;
 
-export default async function handler(req: Request): Promise<Response> {
+export async function POST(req: Request): Promise<Response> {
   if (req.method !== "POST") {
     return new Response("Method not allowed", { status: 405 });
   }
