@@ -3,8 +3,6 @@
 // If business details change (review count, new subjects, new areas, phone/email, etc.),
 // update SYSTEM_PROMPT below and redeploy. The two sources are completely independent.
 
-import Anthropic from "@anthropic-ai/sdk";
-
 const SYSTEM_PROMPT = `You are a helpful assistant for HUMBLE Learning Co., a private tutoring company in Los Angeles founded and run by Tiana. Your role is to answer questions accurately and encourage visitors to book a free intro call.
 
 ════════════════════════════════════════
@@ -118,18 +116,36 @@ export default async function handler(req: Request): Promise<Response> {
     return new Response("Invalid messages", { status: 400 });
   }
 
-  const client = new Anthropic({ apiKey, timeout: 8000 });
-
   try {
-    const response = await client.messages.create({
-      model: "claude-haiku-4-5-20251001",
-      max_tokens: 512,
-      system: SYSTEM_PROMPT,
-      messages: messages as Anthropic.MessageParam[],
+    const response = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01",
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "claude-haiku-4-5-20251001",
+        max_tokens: 512,
+        system: SYSTEM_PROMPT,
+        messages,
+      }),
+      signal: AbortSignal.timeout(8000),
     });
 
-    const text =
-      response.content[0].type === "text" ? response.content[0].text : "";
+    if (!response.ok) {
+      const errText = await response.text();
+      console.error("Anthropic API error:", response.status, errText);
+      return new Response(JSON.stringify({ error: errText }), {
+        status: 502,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
+    const data = await response.json() as {
+      content: { type: string; text: string }[];
+    };
+    const text = data.content[0]?.type === "text" ? data.content[0].text : "";
 
     return new Response(JSON.stringify({ text }), {
       headers: {
@@ -139,7 +155,7 @@ export default async function handler(req: Request): Promise<Response> {
     });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Unknown error";
-    console.error("Anthropic error:", message);
+    console.error("Chat handler error:", message);
     return new Response(JSON.stringify({ error: message }), {
       status: 500,
       headers: { "Content-Type": "application/json" },

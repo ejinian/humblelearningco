@@ -102,12 +102,18 @@ export function ChatWidget() {
     setIsStreaming(true);
     setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
 
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 12000);
+
     try {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: apiMessages }),
+        signal: controller.signal,
       });
+
+      clearTimeout(timeout);
 
       if (!res.ok) throw new Error(`API error ${res.status}`);
 
@@ -121,6 +127,7 @@ export function ChatWidget() {
         return updated;
       });
     } catch {
+      clearTimeout(timeout);
       setMessages((prev) => {
         const updated = [...prev];
         updated[updated.length - 1] = {
