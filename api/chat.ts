@@ -118,22 +118,31 @@ export default async function handler(req: Request): Promise<Response> {
     return new Response("Invalid messages", { status: 400 });
   }
 
-  const client = new Anthropic({ apiKey });
+  const client = new Anthropic({ apiKey, timeout: 8000 });
 
-  const response = await client.messages.create({
-    model: "claude-haiku-4-5-20251001",
-    max_tokens: 512,
-    system: SYSTEM_PROMPT,
-    messages: messages as Anthropic.MessageParam[],
-  });
+  try {
+    const response = await client.messages.create({
+      model: "claude-haiku-4-5-20251001",
+      max_tokens: 512,
+      system: SYSTEM_PROMPT,
+      messages: messages as Anthropic.MessageParam[],
+    });
 
-  const text =
-    response.content[0].type === "text" ? response.content[0].text : "";
+    const text =
+      response.content[0].type === "text" ? response.content[0].text : "";
 
-  return new Response(JSON.stringify({ text }), {
-    headers: {
-      "Content-Type": "application/json",
-      "Cache-Control": "no-store",
-    },
-  });
+    return new Response(JSON.stringify({ text }), {
+      headers: {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store",
+      },
+    });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Unknown error";
+    console.error("Anthropic error:", message);
+    return new Response(JSON.stringify({ error: message }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
 }
