@@ -53,6 +53,7 @@ export default async function handler(req: Request): Promise<Response> {
         subject: `New tutoring inquiry — ${body.name} (${body.subject})`,
         html,
       }),
+      signal: AbortSignal.timeout(5000),
     });
   } catch {
     // Non-fatal — don't block the user if email fails
