@@ -109,24 +109,17 @@ export function ChatWidget() {
         body: JSON.stringify({ messages: apiMessages }),
       });
 
-      if (!res.ok || !res.body) throw new Error("API error");
+      if (!res.ok) throw new Error(`API error ${res.status}`);
 
-      const reader = res.body.getReader();
-      const decoder = new TextDecoder();
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        const chunk = decoder.decode(value, { stream: true });
-        setMessages((prev) => {
-          const updated = [...prev];
-          updated[updated.length - 1] = {
-            role: "assistant",
-            content: updated[updated.length - 1].content + chunk,
-          };
-          return updated;
-        });
-      }
+      const data = await res.json() as { text: string };
+      setMessages((prev) => {
+        const updated = [...prev];
+        updated[updated.length - 1] = {
+          role: "assistant",
+          content: data.text || FALLBACK_MSG,
+        };
+        return updated;
+      });
     } catch {
       setMessages((prev) => {
         const updated = [...prev];

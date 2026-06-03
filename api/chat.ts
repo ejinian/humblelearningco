@@ -120,37 +120,20 @@ export default async function handler(req: Request): Promise<Response> {
 
   const client = new Anthropic({ apiKey });
 
-  const readable = new ReadableStream({
-    async start(controller) {
-      try {
-        const stream = client.messages.stream({
-          model: "claude-haiku-4-5-20251001",
-          max_tokens: 512,
-          system: SYSTEM_PROMPT,
-          messages: messages as Anthropic.MessageParam[],
-        });
-
-        for await (const chunk of stream) {
-          if (
-            chunk.type === "content_block_delta" &&
-            chunk.delta.type === "text_delta"
-          ) {
-            controller.enqueue(new TextEncoder().encode(chunk.delta.text));
-          }
-        }
-      } catch (err) {
-        console.error("Anthropic stream error:", err);
-      } finally {
-        controller.close();
-      }
-    },
+  const response = await client.messages.create({
+    model: "claude-haiku-4-5-20251001",
+    max_tokens: 512,
+    system: SYSTEM_PROMPT,
+    messages: messages as Anthropic.MessageParam[],
   });
 
-  return new Response(readable, {
+  const text =
+    response.content[0].type === "text" ? response.content[0].text : "";
+
+  return new Response(JSON.stringify({ text }), {
     headers: {
-      "Content-Type": "text/plain; charset=utf-8",
+      "Content-Type": "application/json",
       "Cache-Control": "no-store",
-      "X-Content-Type-Options": "nosniff",
     },
   });
 }
