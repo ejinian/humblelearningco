@@ -5,8 +5,6 @@
 
 import Anthropic from "@anthropic-ai/sdk";
 
-export const config = { runtime: "edge" };
-
 const SYSTEM_PROMPT = `You are a helpful assistant for HUMBLE Learning Co., a private tutoring company in Los Angeles founded and run by Tiana. Your role is to answer questions accurately and encourage visitors to book a free intro call.
 
 ════════════════════════════════════════

@@ -1,5 +1,3 @@
-export const config = { runtime: "edge" };
-
 interface LeadPayload {
   name: string;
   contact: string;
