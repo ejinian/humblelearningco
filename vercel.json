@@ -1,4 +1,8 @@
 {
+  "functions": {
+    "api/chat.ts": { "maxDuration": 30 },
+    "api/lead.ts": { "maxDuration": 10 }
+  },
   "rewrites": [
     {
       "source": "/(.*)",
