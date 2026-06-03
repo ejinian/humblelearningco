@@ -172,7 +172,7 @@ export default function Home() {
         </Reveal>
 
         <Reveal delay={100} className="mt-10">
-          <PhotoStrip count={4} />
+          <PhotoStrip count={6} />
         </Reveal>
 
         <Reveal delay={200} className="mt-16">
