@@ -49,7 +49,7 @@ export default function Contact() {
           <SectionHeading
             as="h1"
             eyebrow="Get in touch"
-            title="Book Private Tutoring in Los Angeles."
+            title="Tell us about your student."
             description="Tell us what your student is working on and what's been hard. That's enough to start."
           />
         </Reveal>
