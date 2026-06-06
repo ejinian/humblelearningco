@@ -22,6 +22,7 @@ import { getNeighborhood } from "@/lib/neighborhoods";
 import { featuredReviews } from "@/lib/reviews";
 import { services } from "@/lib/services";
 import { subjectLinks } from "@/lib/subjects";
+import { getCombosForNeighborhood } from "@/lib/subjectNeighborhoods";
 import { heroPhoto } from "@/lib/photos";
 import { site } from "@/lib/site";
 
@@ -61,6 +62,7 @@ export default function NeighborhoodPage() {
   if (!neighborhood) return <NotFound />;
 
   const canonicalUrl = `${site.url}/${neighborhood.slug}`;
+  const combos = getCombosForNeighborhood(neighborhood.name);
   const pageTitle = `Private Tutoring in ${neighborhood.name} | HUMBLE Learning Co.`;
 
   const trustIndicators = [
@@ -408,16 +410,27 @@ export default function NeighborhoodPage() {
             Popular subjects in {neighborhood.name}
           </p>
           <div className="flex flex-wrap gap-3">
-            {subjectLinks.map((s) => (
-              <Link
-                key={s.slug}
-                to={`/${s.slug}`}
-                className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card px-4 py-2 text-sm font-medium text-primary hover:border-accent/50 hover:bg-accent/5 hover:text-accent transition-all duration-150"
-              >
-                {s.label}
-                <ArrowRight className="size-3.5" />
-              </Link>
-            ))}
+            {combos.length > 0
+              ? combos.map((c) => (
+                  <Link
+                    key={c.slug}
+                    to={`/${c.slug}`}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card px-4 py-2 text-sm font-medium text-primary hover:border-accent/50 hover:bg-accent/5 hover:text-accent transition-all duration-150"
+                  >
+                    {c.label}
+                    <ArrowRight className="size-3.5" />
+                  </Link>
+                ))
+              : subjectLinks.map((s) => (
+                  <Link
+                    key={s.slug}
+                    to={`/${s.slug}`}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card px-4 py-2 text-sm font-medium text-primary hover:border-accent/50 hover:bg-accent/5 hover:text-accent transition-all duration-150"
+                  >
+                    {s.label}
+                    <ArrowRight className="size-3.5" />
+                  </Link>
+                ))}
           </div>
         </Reveal>
       </section>

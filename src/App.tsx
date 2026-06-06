@@ -9,6 +9,7 @@ import Contact from "@/pages/Contact";
 import FAQ from "@/pages/FAQ";
 import NeighborhoodPage from "@/pages/NeighborhoodPage";
 import SubjectPage from "@/pages/SubjectPage";
+import SubjectNeighborhoodPage from "@/pages/SubjectNeighborhoodPage";
 import NotFound from "@/pages/NotFound";
 
 // Redirects from old bare-city slugs → new keyword-rich slugs
@@ -71,6 +72,19 @@ export default function App() {
         <Route path="adhd-tutor-los-angeles" element={<SubjectPage />} />
         <Route path="reading-tutor-los-angeles" element={<SubjectPage />} />
         <Route path="college-essay-tutoring-los-angeles" element={<SubjectPage />} />
+        {/* Subject + neighborhood combo pages */}
+        <Route path="math-tutor-beverly-hills" element={<SubjectNeighborhoodPage />} />
+        <Route path="math-tutor-santa-monica" element={<SubjectNeighborhoodPage />} />
+        <Route path="math-tutor-manhattan-beach" element={<SubjectNeighborhoodPage />} />
+        <Route path="math-tutor-brentwood" element={<SubjectNeighborhoodPage />} />
+        <Route path="math-tutor-calabasas" element={<SubjectNeighborhoodPage />} />
+        <Route path="math-tutor-pacific-palisades" element={<SubjectNeighborhoodPage />} />
+        <Route path="sat-tutor-beverly-hills" element={<SubjectNeighborhoodPage />} />
+        <Route path="sat-tutor-santa-monica" element={<SubjectNeighborhoodPage />} />
+        <Route path="private-tutor-beverly-hills" element={<SubjectNeighborhoodPage />} />
+        <Route path="private-tutor-brentwood" element={<SubjectNeighborhoodPage />} />
+        <Route path="private-tutor-calabasas" element={<SubjectNeighborhoodPage />} />
+        <Route path="private-tutor-manhattan-beach" element={<SubjectNeighborhoodPage />} />
         {/* Permanent redirects from old bare-city URLs to new keyword slugs */}
         {Object.entries(neighborhoodRedirects).map(([from, to]) => (
           <Route key={from} path={from} element={<Navigate to={`/${to}`} replace />} />

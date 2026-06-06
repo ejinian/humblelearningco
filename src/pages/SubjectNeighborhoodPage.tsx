@@ -7,6 +7,7 @@ import {
   MessagesSquare,
   Sparkles,
   Calendar,
+  School,
 } from "lucide-react";
 
 import { Reveal } from "@/components/Reveal";
@@ -16,8 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import NotFound from "@/pages/NotFound";
 
-import { getSubject } from "@/lib/subjects";
-import { getCombosForSubjectSlug } from "@/lib/subjectNeighborhoods";
+import { getSubjectNeighborhood } from "@/lib/subjectNeighborhoods";
 import { featuredReviews } from "@/lib/reviews";
 import { heroPhoto } from "@/lib/photos";
 import { site } from "@/lib/site";
@@ -40,14 +40,13 @@ const steps = [
   },
 ];
 
-export default function SubjectPage() {
+export default function SubjectNeighborhoodPage() {
   const { slug } = useParams<{ slug: string }>();
-  const subject = getSubject(slug ?? "");
+  const page = getSubjectNeighborhood(slug ?? "");
 
-  if (!subject) return <NotFound />;
+  if (!page) return <NotFound />;
 
-  const canonicalUrl = `${site.url}/${subject.slug}`;
-  const combos = getCombosForSubjectSlug(subject.slug);
+  const canonicalUrl = `${site.url}/${page.slug}`;
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -56,14 +55,14 @@ export default function SubjectPage() {
         "@type": "LocalBusiness",
         "@id": `${site.url}/#business`,
         name: site.name,
-        description: subject.metaDescription,
+        description: page.metaDescription,
         url: canonicalUrl,
         telephone: site.contact.phone,
         email: site.contact.email,
         priceRange: "$$",
         areaServed: {
           "@type": "City",
-          name: "Los Angeles",
+          name: page.neighborhood,
           addressRegion: "CA",
           addressCountry: "US",
         },
@@ -75,7 +74,7 @@ export default function SubjectPage() {
       },
       {
         "@type": "FAQPage",
-        mainEntity: subject.faqs.map(({ q, a }) => ({
+        mainEntity: page.faqs.map(({ q, a }) => ({
           "@type": "Question",
           name: q,
           acceptedAnswer: { "@type": "Answer", text: a },
@@ -87,10 +86,10 @@ export default function SubjectPage() {
   return (
     <div>
       <Helmet>
-        <title>{subject.metaTitle}</title>
-        <meta name="description" content={subject.metaDescription} />
-        <meta property="og:title" content={subject.metaTitle} />
-        <meta property="og:description" content={subject.metaDescription} />
+        <title>{page.metaTitle}</title>
+        <meta name="description" content={page.metaDescription} />
+        <meta property="og:title" content={page.metaTitle} />
+        <meta property="og:description" content={page.metaDescription} />
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
@@ -113,23 +112,22 @@ export default function SubjectPage() {
         />
 
         <div className="container grid min-h-[calc(100svh-5rem)] gap-11 py-12 md:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(390px,0.78fr)] lg:items-center lg:gap-14 lg:py-20">
-          {/* Left */}
           <div className="max-w-[44rem] animate-fade-up text-center lg:text-left">
             <p className="mx-auto text-xs uppercase tracking-[0.22em] text-accent font-medium lg:mx-0">
-              {subject.eyebrow}
+              {page.eyebrow}
             </p>
 
             <h1 className="mt-3 font-serif text-[2.85rem] font-black leading-[1.02] text-primary text-balance sm:text-6xl lg:text-[4.85rem] xl:text-[5.15rem]">
-              {subject.headline}{" "}
-              <span className="text-accent">{subject.headlineAccent}</span>
+              {page.headline}{" "}
+              <span className="text-accent">{page.headlineAccent}</span>
             </h1>
 
             <p className="mx-auto mt-6 max-w-2xl text-lg font-medium leading-relaxed text-foreground/80 text-pretty md:text-xl lg:mx-0">
-              {subject.tagline}
+              {page.tagline}
             </p>
 
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 text-pretty lg:mx-0">
-              {subject.body}
+              {page.body}
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center lg:justify-start">
@@ -159,10 +157,10 @@ export default function SubjectPage() {
 
             <div className="mx-auto mt-9 grid max-w-2xl grid-cols-1 gap-2.5 sm:grid-cols-2 lg:mx-0">
               {[
-                "1000+ Students Helped",
+                `Serving ${page.neighborhood}`,
                 `${site.rating.reviewCount}+ Five-Star Reviews`,
-                "All Grade Levels",
                 "In-Person & Online",
+                `One-on-One with ${site.founder}`,
               ].map((indicator) => (
                 <div
                   key={indicator}
@@ -185,7 +183,7 @@ export default function SubjectPage() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.25rem] bg-secondary shadow-[0_28px_70px_hsl(var(--primary)/0.22)] ring-1 ring-primary/10 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_34px_84px_hsl(var(--primary)/0.25)] sm:rounded-[1.45rem]">
               <img
                 src={heroPhoto.src}
-                alt={heroPhoto.alt}
+                alt={`${page.subject} tutor in ${page.neighborhood} — ${heroPhoto.alt}`}
                 className="absolute inset-0 h-full w-full scale-[1.03] object-cover object-[52%_44%] transition-transform duration-700 hover:scale-[1.07]"
                 loading="eager"
               />
@@ -210,35 +208,56 @@ export default function SubjectPage() {
         </div>
       </section>
 
-      {/* Why HUMBLE for this subject */}
-      <section className="container py-20 md:py-24">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Why HUMBLE"
-            title="One tutor. Real results."
-            description="No rotating staff, no generic programs. Every student works directly with Tiana — and every plan is built around that student specifically."
-          />
-        </Reveal>
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {subject.whyItems.map((item, i) => (
-            <Reveal key={item.title} delay={i * 100}>
-              <Card className="border-border/70 h-full transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_24px_hsl(var(--primary)/0.07)] motion-reduce:transition-none">
-                <CardContent className="p-7 space-y-3">
-                  <h3 className="font-serif text-xl font-semibold text-primary">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed text-pretty">
-                    {item.body}
-                  </p>
-                </CardContent>
-              </Card>
+      {/* Local schools signal */}
+      {page.schools.length > 0 && (
+        <section className="border-y border-border/50 bg-secondary/40">
+          <div className="container py-8">
+            <Reveal>
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                <div className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-accent font-medium shrink-0">
+                  <School className="size-3.5" />
+                  Local schools we work with
+                </div>
+                {page.schools.map((school) => (
+                  <span
+                    key={school}
+                    className="text-sm font-medium text-primary/75"
+                  >
+                    {school}
+                  </span>
+                ))}
+              </div>
             </Reveal>
-          ))}
-        </div>
+          </div>
+        </section>
+      )}
+
+      {/* Breadcrumb links back to neighborhood + subject pages */}
+      <section className="container pt-14 pb-2">
+        <Reveal>
+          <div className="flex flex-wrap gap-3 text-sm">
+            <Link
+              to={`/${page.neighborhoodSlug}`}
+              className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-accent transition-colors"
+            >
+              <ArrowRight className="size-3 rotate-180" />
+              All tutoring in {page.neighborhood}
+            </Link>
+            {page.subjectSlug && (
+              <Link
+                to={`/${page.subjectSlug}`}
+                className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-accent transition-colors"
+              >
+                <ArrowRight className="size-3 rotate-180" />
+                {page.subject} tutoring across LA
+              </Link>
+            )}
+          </div>
+        </Reveal>
       </section>
 
       {/* How it works */}
-      <section className="bg-secondary/60 border-y border-border/60">
+      <section className="bg-secondary/60 border-y border-border/60 mt-14">
         <div className="container py-20 md:py-24">
           <Reveal>
             <SectionHeading
@@ -318,13 +337,13 @@ export default function SubjectPage() {
           <Reveal>
             <SectionHeading
               eyebrow="Common questions"
-              title="Frequently Asked Questions"
+              title={`${page.subject} Tutoring in ${page.neighborhood} — FAQs`}
               align="center"
               className="mx-auto"
             />
           </Reveal>
           <div className="mt-12 max-w-3xl mx-auto space-y-6">
-            {subject.faqs.map((faq, i) => (
+            {page.faqs.map((faq, i) => (
               <Reveal key={i} delay={i * 80}>
                 <div className="rounded-xl border border-border/70 bg-card p-6 md:p-7 shadow-sm">
                   <h3 className="font-serif text-lg font-semibold text-primary leading-snug">
@@ -340,7 +359,7 @@ export default function SubjectPage() {
         </div>
       </section>
 
-      {/* CTA + related areas + related subjects */}
+      {/* CTA + related pages */}
       <section className="container py-20 md:py-24">
         <div className="rounded-2xl bg-primary text-primary-foreground p-10 md:p-14 grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
           <div className="space-y-3">
@@ -352,23 +371,7 @@ export default function SubjectPage() {
             </h2>
             <p className="text-primary-foreground/80 max-w-xl text-pretty leading-relaxed">
               No commitment — just a conversation about where your student is
-              and where they want to be. We'll tell you honestly whether we're
-              the right fit.
-            </p>
-            <p className="text-sm text-primary-foreground/60">
-              Serving:{" "}
-              {subject.relatedNeighborhoods.map((area, i) => (
-                <span key={area.slug}>
-                  <Link
-                    to={`/${area.slug}`}
-                    className="underline underline-offset-2 hover:text-accent transition-colors"
-                  >
-                    {area.name}
-                  </Link>
-                  {i < subject.relatedNeighborhoods.length - 1 ? ", " : ""}
-                </span>
-              ))}{" "}
-              &amp; all of Los Angeles
+              and where they want to be.
             </p>
           </div>
           <Button asChild size="lg" variant="accent">
@@ -379,44 +382,25 @@ export default function SubjectPage() {
           </Button>
         </div>
 
-        {/* Related subject pages */}
-        <Reveal className="mt-12">
-          <p className="text-xs uppercase tracking-[0.22em] text-accent font-medium mb-5">
-            Also offered
-          </p>
-          <div className="flex flex-wrap gap-3">
-            {subject.relatedSubjects.map((s) => (
-              <Button
-                key={s.slug}
-                asChild
-                variant="outline"
-                className="border-primary/25 hover:border-primary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-200"
-              >
-                <Link to={`/${s.slug}`}>
-                  {s.label}
-                  <ArrowRight className="size-3.5" />
-                </Link>
-              </Button>
-            ))}
-          </div>
-        </Reveal>
-
-        {/* Neighborhood-specific pages for this subject */}
-        {combos.length > 0 && (
-          <Reveal className="mt-8">
+        {/* Related combo pages */}
+        {page.relatedCombos.length > 0 && (
+          <Reveal className="mt-12">
             <p className="text-xs uppercase tracking-[0.18em] text-accent font-medium mb-5">
-              By neighborhood
+              Also available
             </p>
             <div className="flex flex-wrap gap-3">
-              {combos.map((c) => (
-                <Link
+              {page.relatedCombos.map((c) => (
+                <Button
                   key={c.slug}
-                  to={`/${c.slug}`}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card px-4 py-2 text-sm font-medium text-primary hover:border-accent/50 hover:bg-accent/5 hover:text-accent transition-all duration-150"
+                  asChild
+                  variant="outline"
+                  className="border-primary/25 hover:border-primary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-200"
                 >
-                  {c.label}
-                  <ArrowRight className="size-3.5" />
-                </Link>
+                  <Link to={`/${c.slug}`}>
+                    {c.label}
+                    <ArrowRight className="size-3.5" />
+                  </Link>
+                </Button>
               ))}
             </div>
           </Reveal>
