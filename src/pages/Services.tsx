@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ServiceGrid } from "@/components/ServiceGrid";
 import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/ui/button";
+import { subjectLinks } from "@/lib/subjects";
 import { site } from "@/lib/site";
 
 const formats = [
@@ -47,6 +48,24 @@ export default function Services() {
 
       <section className="container pb-20">
         <ServiceGrid detailed />
+
+        <Reveal className="mt-12 pt-10 border-t border-border/50">
+          <p className="text-xs uppercase tracking-[0.18em] text-accent font-medium mb-5">
+            In-depth subject guides
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {subjectLinks.map((s) => (
+              <Link
+                key={s.slug}
+                to={`/${s.slug}`}
+                className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card px-4 py-2 text-sm font-medium text-primary hover:border-accent/50 hover:bg-accent/5 hover:text-accent transition-all duration-150"
+              >
+                {s.label}
+                <ArrowRight className="size-3.5" />
+              </Link>
+            ))}
+          </div>
+        </Reveal>
       </section>
 
       <section className="bg-secondary/60 border-y border-border/60">

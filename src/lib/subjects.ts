@@ -1,5 +1,6 @@
 export interface SubjectData {
   slug: string;
+  navLabel: string;
   eyebrow: string;
   headline: string;
   headlineAccent: string;
@@ -29,6 +30,7 @@ const commonNeighborhoods: { name: string; slug: string }[] = [
 export const subjects: SubjectData[] = [
   {
     slug: "math-tutor-los-angeles",
+    navLabel: "Math Tutoring",
     eyebrow: "Los Angeles · K–12 & College",
     headline: "Math Tutoring in",
     headlineAccent: "Los Angeles.",
@@ -83,6 +85,7 @@ export const subjects: SubjectData[] = [
   },
   {
     slug: "sat-prep-los-angeles",
+    navLabel: "SAT & ACT Prep",
     eyebrow: "Los Angeles · SAT · ACT · PSAT · AP Exams",
     headline: "SAT & ACT Prep",
     headlineAccent: "in Los Angeles.",
@@ -137,6 +140,7 @@ export const subjects: SubjectData[] = [
   },
   {
     slug: "adhd-tutor-los-angeles",
+    navLabel: "ADHD & Coaching",
     eyebrow: "Los Angeles · ADHD-Friendly · Executive Function",
     headline: "ADHD Tutoring &",
     headlineAccent: "Academic Coaching.",
@@ -192,6 +196,7 @@ export const subjects: SubjectData[] = [
   },
   {
     slug: "reading-tutor-los-angeles",
+    navLabel: "Reading & Writing",
     eyebrow: "Los Angeles · Phonics · Comprehension · Writing",
     headline: "Reading Tutor",
     headlineAccent: "in Los Angeles.",
@@ -246,6 +251,7 @@ export const subjects: SubjectData[] = [
   },
   {
     slug: "college-essay-tutoring-los-angeles",
+    navLabel: "College Essays",
     eyebrow: "Los Angeles · Common App · UC Essays · Supplements",
     headline: "College Essay",
     headlineAccent: "Tutoring.",
@@ -304,3 +310,8 @@ export const subjects: SubjectData[] = [
 export function getSubject(slug: string): SubjectData | undefined {
   return subjects.find((s) => s.slug === slug);
 }
+
+export const subjectLinks = subjects.map((s) => ({
+  slug: s.slug,
+  label: s.navLabel,
+}));

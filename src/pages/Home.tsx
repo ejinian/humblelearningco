@@ -17,6 +17,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 import { featuredReviews } from "@/lib/reviews";
 import { services } from "@/lib/services";
+import { subjectLinks } from "@/lib/subjects";
 import { site } from "@/lib/site";
 
 const stepItems = [
@@ -76,6 +77,24 @@ export default function Home() {
         </Reveal>
 
         <ServiceGrid items={services} className="mt-12" />
+
+        <Reveal className="mt-10">
+          <div className="flex flex-wrap items-center gap-2.5">
+            <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground font-medium">
+              Explore in depth:
+            </span>
+            {subjectLinks.map((s) => (
+              <Link
+                key={s.slug}
+                to={`/${s.slug}`}
+                className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card px-3.5 py-1.5 text-xs font-medium text-primary hover:border-accent/50 hover:bg-accent/5 hover:text-accent transition-all duration-150"
+              >
+                {s.label}
+                <ArrowRight className="size-3" />
+              </Link>
+            ))}
+          </div>
+        </Reveal>
       </section>
 
       <PullQuote />
