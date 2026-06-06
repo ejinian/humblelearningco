@@ -49,8 +49,8 @@ export default function Contact() {
           <SectionHeading
             as="h1"
             eyebrow="Get in touch"
-            title="Tell us about your student."
-            description="What they're working on. What's been hard. That's enough to start."
+            title="Book Private Tutoring in Los Angeles."
+            description="Tell us what your student is working on and what's been hard. That's enough to start."
           />
         </Reveal>
       </section>

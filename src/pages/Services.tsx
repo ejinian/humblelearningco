@@ -31,6 +31,32 @@ export default function Services() {
           content="One tutor, every subject. K–12 math, reading, writing, science, SAT/ACT/PSAT prep, homework help, study skills, and college courses in Los Angeles."
         />
         <link rel="canonical" href={`${site.url}/services`} />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "What subjects does HUMBLE Learning Co. offer tutoring for?",
+              acceptedAnswer: { "@type": "Answer", text: "We cover math (elementary through AP Calculus and college level), reading and writing, science (Biology, Chemistry, Physics, and AP courses), history, SAT/ACT/PSAT prep, AP exam prep, homework help, academic coaching, executive function support, and college essay writing. One tutor covers all of it — families don't need to find a different person for each subject." }
+            },
+            {
+              "@type": "Question",
+              name: "Do you offer in-person and online tutoring sessions?",
+              acceptedAnswer: { "@type": "Answer", text: "Yes — both. In-person sessions are available across Los Angeles, including in-home visits throughout the San Fernando Valley, Westside, South Bay, and Pasadena corridor. Online sessions are available for students throughout California and run the same way as in-person." }
+            },
+            {
+              "@type": "Question",
+              name: "Do you work with students who have ADHD?",
+              acceptedAnswer: { "@type": "Answer", text: "Yes — and it's central to how sessions are designed, not an afterthought. Sessions are structured for neurodivergent learners: shorter focused intervals, frequent check-ins, and executive function coaching woven in alongside the academic content. Organization, task initiation, and time management are taught as skills, not just advised." }
+            },
+            {
+              "@type": "Question",
+              name: "What grade levels do you tutor?",
+              acceptedAnswer: { "@type": "Answer", text: "All grade levels — kindergarten through elementary, middle school, high school (including honors, AP, and IB), college, and adult learners. One of the biggest advantages for families is continuity: students don't need to find a new tutor as coursework gets harder. We grow with students over time." }
+            },
+          ]
+        })}</script>
       </Helmet>
 
       <section className="container py-16 md:py-20">

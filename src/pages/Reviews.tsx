@@ -31,7 +31,7 @@ export default function Reviews() {
         <SectionHeading
           as="h1"
           eyebrow="Reviews"
-          title="Five Stars, In Their Own Words."
+          title="Los Angeles Tutoring Reviews From Real Families."
         />
 
         <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">

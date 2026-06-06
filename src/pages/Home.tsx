@@ -53,6 +53,32 @@ export default function Home() {
           content="One-on-one tutoring for K–12 and college students in Los Angeles. Math, reading, science, SAT/ACT prep, and ADHD-friendly support. First call is free."
         />
         <link rel="canonical" href={`${site.url}/`} />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "What happens on the free intro call?",
+              acceptedAnswer: { "@type": "Answer", text: "The intro call is a relaxed 15-minute conversation about your student's situation — what subjects they're struggling with, how they learn, and what kind of support would help most. There's no commitment required. If it feels like a good fit, we schedule the first session and build a plan from there." }
+            },
+            {
+              "@type": "Question",
+              name: "What subjects does HUMBLE Learning Co. tutor?",
+              acceptedAnswer: { "@type": "Answer", text: "We cover virtually every subject a student is likely to encounter — math from elementary through AP Calculus and college level, reading and writing, science (Biology, Chemistry, Physics), history, SAT/ACT/PSAT prep, homework help, academic coaching, executive function support, and college essay writing." }
+            },
+            {
+              "@type": "Question",
+              name: "Do you offer in-person and online tutoring?",
+              acceptedAnswer: { "@type": "Answer", text: "Yes. In-person sessions are available across Los Angeles. Online sessions are available for students throughout California. Both formats are one-on-one and run the same way — there's no difference in quality or approach." }
+            },
+            {
+              "@type": "Question",
+              name: "How is HUMBLE Learning Co. different from a tutoring center?",
+              acceptedAnswer: { "@type": "Answer", text: "Every student at HUMBLE works directly with Tiana — the founder and only tutor. There's no matching algorithm, no rotating staff, and no substitutes. That consistency means Tiana knows your student's specific gaps, what clicked last session, and what to focus on next. That continuity is where real progress happens." }
+            },
+          ]
+        })}</script>
       </Helmet>
       <StructuredData />
 

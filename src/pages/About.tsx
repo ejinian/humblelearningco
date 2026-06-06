@@ -71,6 +71,32 @@ export default function About() {
           content="Meet Tiana, founder of HUMBLE Learning Co. One-on-one tutoring in Los Angeles for students who are capable of far more than they believe. First call free."
         />
         <link rel="canonical" href={`${site.url}/about`} />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "Who is Tiana and what is her background?",
+              acceptedAnswer: { "@type": "Answer", text: "Tiana is the founder and sole tutor at HUMBLE Learning Co. She scored a perfect 1600 on the SAT, holds a 4.6 weighted GPA, and has over six years of tutoring experience with more than 1,000 students. She works directly with every student — there is no rotating staff or substitutes." }
+            },
+            {
+              "@type": "Question",
+              name: "What makes Tiana's tutoring approach different?",
+              acceptedAnswer: { "@type": "Answer", text: "Tiana focuses on understanding before practice — she builds the concept first so that skills genuinely stick, rather than drilling procedures a student will forget. Every plan is built around the individual student, not a program or worksheet routine." }
+            },
+            {
+              "@type": "Question",
+              name: "What grade levels does Tiana tutor?",
+              acceptedAnswer: { "@type": "Answer", text: "All grade levels — kindergarten through elementary, middle school, high school (including honors, AP, and IB courses), college, and adult learners. Every plan is built around that student's specific level and needs." }
+            },
+            {
+              "@type": "Question",
+              name: "How do I get started with HUMBLE Learning Co.?",
+              acceptedAnswer: { "@type": "Answer", text: "The first step is a free intro call — no commitment required. It's a 15-minute conversation about your student's situation, what they're working on, and what kind of support would help most. From there, Tiana builds a custom plan." }
+            },
+          ]
+        })}</script>
       </Helmet>
 
       <section className="container pt-12 pb-14 md:pt-20 md:pb-20">
@@ -87,7 +113,7 @@ export default function About() {
                   </p>
                 </div>
                 <h1 className="mt-3 font-serif text-3xl font-semibold leading-[1.05] text-primary text-balance sm:text-4xl md:text-5xl lg:text-6xl">
-                  Meet the Founder.
+                  Meet Tiana, a Los Angeles Tutor Helping Students Build Confidence.
                 </h1>
               </div>
             </Reveal>
