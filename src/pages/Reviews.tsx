@@ -10,6 +10,20 @@ import { Button } from "@/components/ui/button";
 import { reviews } from "@/lib/reviews";
 import { site } from "@/lib/site";
 
+const aggregateRatingSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: site.name,
+  url: site.url,
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: site.rating.stars.toFixed(1),
+    reviewCount: String(site.rating.reviewCount),
+    bestRating: "5",
+    worstRating: "1",
+  },
+};
+
 export default function Reviews() {
   return (
     <div>
@@ -25,13 +39,14 @@ export default function Reviews() {
           content="Read what students and families across Los Angeles say about HUMBLE Learning Co. — 130+ five-star Google reviews from real sessions."
         />
         <link rel="canonical" href={`${site.url}/reviews`} />
+        <script type="application/ld+json">{JSON.stringify(aggregateRatingSchema)}</script>
       </Helmet>
 
       <section className="container py-16 md:py-20">
         <SectionHeading
           as="h1"
           eyebrow="Reviews"
-          title="Los Angeles Tutoring Reviews From Real Families."
+          title="Five Stars, In Their Own Words."
         />
 
         <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">

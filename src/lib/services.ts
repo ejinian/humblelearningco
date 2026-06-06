@@ -15,6 +15,8 @@ export interface Service {
   detail: string;
   icon: LucideIcon;
   topics: string[];
+  /** Subject landing page slug — defined for services that have a dedicated page. */
+  subjectSlug?: string;
 }
 
 /**
@@ -28,6 +30,7 @@ export const services: Service[] = [
     blurb: "Every level, every grade — taught the way it finally clicks.",
     detail: "",
     icon: Calculator,
+    subjectSlug: "math-tutor-los-angeles",
     topics: [
       "Elementary Math",
       "Pre-Algebra",
@@ -47,6 +50,7 @@ export const services: Service[] = [
     blurb: "Build confidence in reading, writing, and communication.",
     detail: "",
     icon: BookOpen,
+    subjectSlug: "reading-tutor-los-angeles",
     topics: [
       "Phonics",
       "Reading Comprehension",
@@ -82,6 +86,7 @@ export const services: Service[] = [
     blurb: "Strategy and content together — for every test that matters.",
     detail: "",
     icon: ScrollText,
+    subjectSlug: "sat-prep-los-angeles",
     topics: [
       "Classroom Tests",
       "Quizzes",
@@ -96,6 +101,7 @@ export const services: Service[] = [
     blurb: "Organization, focus, and accountability that carry across every subject.",
     detail: "",
     icon: ListChecks,
+    subjectSlug: "adhd-tutor-los-angeles",
     topics: [
       "Organization",
       "Time Management",

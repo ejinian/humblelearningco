@@ -31,7 +31,9 @@ export function Hero() {
       <div className="container grid min-h-[calc(100svh-5rem)] gap-11 py-12 md:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(390px,0.78fr)] lg:items-center lg:gap-14 lg:py-20">
         <div className="max-w-[44rem] animate-fade-up text-center lg:text-left">
           <h1 className="font-serif text-[2.2rem] font-black leading-[1.02] text-primary text-balance sm:text-[3.5rem] lg:text-[4.85rem] xl:text-[5.15rem]">
-            Personalized Learning.
+            Personalized Tutoring
+            <br />
+            in Los Angeles.
             <br />
             <span className="text-accent">Proven Results.</span>
           </h1>
@@ -105,6 +107,7 @@ export function Hero() {
               alt={heroPhoto.alt}
               className="absolute inset-0 h-full w-full scale-[1.03] object-cover object-[52%_44%] transition-transform duration-700 hover:scale-[1.07]"
               loading="eager"
+              fetchPriority="high"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/32 via-primary/0 to-accent/8" />
           </div>

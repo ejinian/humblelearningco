@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://humblelearningco.com/sitemap.xml
+Sitemap: https://www.humblelearningco.com/sitemap.xml

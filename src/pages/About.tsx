@@ -113,7 +113,7 @@ export default function About() {
                   </p>
                 </div>
                 <h1 className="mt-3 font-serif text-3xl font-semibold leading-[1.05] text-primary text-balance sm:text-4xl md:text-5xl lg:text-6xl">
-                  Meet Tiana, a Los Angeles Tutor Helping Students Build Confidence.
+                  Meet the Founder.
                 </h1>
               </div>
             </Reveal>

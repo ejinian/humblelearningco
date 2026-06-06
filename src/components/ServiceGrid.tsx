@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Reveal } from "@/components/Reveal";
 import { services, type Service } from "@/lib/services";
@@ -53,6 +55,18 @@ export function ServiceGrid({
                       </li>
                     ))}
                   </ul>
+                )}
+
+                {service.subjectSlug && (
+                  <div className="mt-auto pt-3">
+                    <Link
+                      to={`/${service.subjectSlug}`}
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-accent hover:text-accent/80 transition-colors"
+                    >
+                      In-depth guide
+                      <ArrowRight className="size-3" />
+                    </Link>
+                  </div>
                 )}
               </CardContent>
             </Card>
