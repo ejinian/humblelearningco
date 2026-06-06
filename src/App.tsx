@@ -8,6 +8,7 @@ import Reviews from "@/pages/Reviews";
 import Contact from "@/pages/Contact";
 import FAQ from "@/pages/FAQ";
 import NeighborhoodPage from "@/pages/NeighborhoodPage";
+import SubjectPage from "@/pages/SubjectPage";
 import NotFound from "@/pages/NotFound";
 
 // Redirects from old bare-city slugs → new keyword-rich slugs
@@ -64,6 +65,12 @@ export default function App() {
         <Route path="reviews" element={<Reviews />} />
         <Route path="contact" element={<Contact />} />
         <Route path="faq" element={<FAQ />} />
+        {/* Subject landing pages */}
+        <Route path="math-tutor-los-angeles" element={<SubjectPage />} />
+        <Route path="sat-prep-los-angeles" element={<SubjectPage />} />
+        <Route path="adhd-tutor-los-angeles" element={<SubjectPage />} />
+        <Route path="reading-tutor-los-angeles" element={<SubjectPage />} />
+        <Route path="college-essay-tutoring-los-angeles" element={<SubjectPage />} />
         {/* Permanent redirects from old bare-city URLs to new keyword slugs */}
         {Object.entries(neighborhoodRedirects).map(([from, to]) => (
           <Route key={from} path={from} element={<Navigate to={`/${to}`} replace />} />

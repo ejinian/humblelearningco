@@ -37,6 +37,37 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- Subject landing pages -->
+  <url>
+    <loc>https://www.humblelearningco.com/math-tutor-los-angeles</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.humblelearningco.com/sat-prep-los-angeles</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.humblelearningco.com/adhd-tutor-los-angeles</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.humblelearningco.com/reading-tutor-los-angeles</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.humblelearningco.com/college-essay-tutoring-los-angeles</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
   <!-- San Fernando Valley -->
   <url>
     <loc>https://www.humblelearningco.com/encino-tutoring</loc>
