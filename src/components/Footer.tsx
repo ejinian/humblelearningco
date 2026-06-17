@@ -3,12 +3,27 @@ import { Mail, MapPin, Phone, Instagram } from "lucide-react";
 
 import { site } from "@/lib/site";
 
+const neighborhoods = [
+  { to: "/encino-tutoring", label: "Encino" },
+  { to: "/sherman-oaks-tutoring", label: "Sherman Oaks" },
+  { to: "/woodland-hills-tutoring", label: "Woodland Hills" },
+  { to: "/calabasas-tutoring", label: "Calabasas" },
+  { to: "/beverly-hills-tutoring", label: "Beverly Hills" },
+  { to: "/santa-monica-tutoring", label: "Santa Monica" },
+  { to: "/brentwood-tutoring", label: "Brentwood" },
+  { to: "/pacific-palisades-tutoring", label: "Pacific Palisades" },
+  { to: "/pasadena-tutoring", label: "Pasadena" },
+  { to: "/glendale-tutoring", label: "Glendale" },
+  { to: "/manhattan-beach-tutoring", label: "Manhattan Beach" },
+  { to: "/malibu-tutoring", label: "Malibu" },
+];
+
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="mt-24 border-t border-border/60 bg-primary text-primary-foreground">
-      <div className="container py-14 grid gap-10 md:grid-cols-3">
+      <div className="container py-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-baseline gap-1.5">
             <span className="font-serif text-xl font-semibold tracking-wide">
@@ -35,7 +50,30 @@ export function Footer() {
               { to: "/reviews", label: "Family Reviews" },
               { to: "/faq", label: "FAQ" },
               { to: "/contact", label: "Book a Session" },
+              { to: "/math-tutor-los-angeles", label: "Math Tutoring" },
+              { to: "/adhd-tutor-los-angeles", label: "ADHD Tutoring" },
+              { to: "/sat-prep-los-angeles", label: "SAT / ACT Prep" },
+              { to: "/reading-tutor-los-angeles", label: "Reading & Writing" },
+              { to: "/college-essay-tutoring-los-angeles", label: "College Essays" },
             ].map((l) => (
+              <li key={l.to}>
+                <Link
+                  to={l.to}
+                  className="text-primary-foreground/80 hover:text-accent transition-colors"
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-sm uppercase tracking-[0.18em] text-accent font-sans font-medium">
+            Areas We Serve
+          </h4>
+          <ul className="mt-4 space-y-2 text-sm">
+            {neighborhoods.map((l) => (
               <li key={l.to}>
                 <Link
                   to={l.to}

@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   ArrowRight,
   CheckCircle2,
@@ -41,8 +41,9 @@ const steps = [
 ];
 
 export default function SubjectNeighborhoodPage() {
-  const { slug } = useParams<{ slug: string }>();
-  const page = getSubjectNeighborhood(slug ?? "");
+  const { pathname } = useLocation();
+  const slug = pathname.replace(/^\//, "");
+  const page = getSubjectNeighborhood(slug);
 
   if (!page) return <NotFound />;
 
