@@ -28,7 +28,7 @@ export function ServiceGrid({
         const Icon = service.icon;
         return (
           <Reveal key={service.slug} delay={i * 70}>
-            <Card className="group h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 border-border/70">
+            <Card className="group h-full border-border/70 transition-all duration-300 hover:-translate-y-1 hover:border-accent/35 hover:shadow-[0_14px_38px_hsl(var(--primary)/0.09)] motion-reduce:transition-none motion-reduce:hover:translate-y-0">
               <CardContent className="p-6 flex flex-col gap-4 h-full">
                 <div className="size-11 rounded-md bg-accent/15 text-accent grid place-items-center ring-1 ring-accent/30 group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
                   <Icon className="size-5" />

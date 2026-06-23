@@ -165,7 +165,7 @@ export default function Home() {
             <StarRating value={5} size={18} />
             <span className="font-semibold text-primary">5.0 Rating</span>
             <span className="text-border/80 select-none">·</span>
-            <span className="text-muted-foreground font-medium">130+ Google Reviews</span>
+            <span className="text-muted-foreground font-medium">140+ Google Reviews</span>
           </div>
         </Reveal>
 
@@ -180,7 +180,7 @@ export default function Home() {
         <Reveal className="mt-10 flex justify-center">
           <Button asChild variant="outline" size="lg" className="group border-primary/25 hover:border-primary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-200">
             <Link to="/reviews">
-              View All 130+ Reviews
+              View All 140+ Reviews
               <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
           </Button>

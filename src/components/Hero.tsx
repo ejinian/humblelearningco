@@ -7,14 +7,14 @@ import { site } from "@/lib/site";
 
 const trustIndicators = [
   "1000+ Students Helped",
-  "130+ 5-Star Reviews",
+  "140+ 5-Star Reviews",
   "All Subjects & Grade Levels",
   "Los Angeles & Online Tutoring",
 ];
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-paper">
+    <section className="hero-ambient relative isolate overflow-hidden bg-paper">
       <div
         className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent"
         aria-hidden
@@ -86,7 +86,7 @@ export function Hero() {
             {trustIndicators.map((indicator) => (
               <div
                 key={indicator}
-                className="group flex min-h-12 items-center gap-3 rounded-md border border-border/70 bg-card/60 px-3.5 py-3 text-left text-sm font-semibold text-primary shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/55 hover:bg-card/90 hover:shadow-md"
+                className="group flex min-h-12 items-center gap-3 rounded-md border border-border/70 bg-card/60 px-3.5 py-3 text-left text-sm font-semibold text-primary shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/55 hover:bg-card/90 hover:shadow-md motion-reduce:transition-none motion-reduce:hover:translate-y-0"
               >
                 <CheckCircle2 className="size-4 shrink-0 text-accent transition-transform duration-300 group-hover:scale-110" />
                 <span>{indicator}</span>
@@ -118,7 +118,7 @@ export function Hero() {
               </span>
               <div className="leading-tight">
                 <div className="text-sm font-semibold text-primary">
-                  Trusted by 130+ LA families
+                  Trusted by 140+ LA families
                 </div>
                 <div className="text-xs text-muted-foreground">
                   Personalized support from {site.founder}

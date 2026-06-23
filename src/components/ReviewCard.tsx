@@ -19,7 +19,7 @@ function initials(name: string) {
 
 export function ReviewCard({ review, className }: ReviewCardProps) {
   return (
-    <Card className={cn("h-full flex flex-col transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_12px_32px_hsl(var(--primary)/0.10)] motion-reduce:transition-none", className)}>
+    <Card className={cn("h-full flex flex-col border-border/70 transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-[0_14px_36px_hsl(var(--primary)/0.10)] motion-reduce:transition-none motion-reduce:hover:translate-y-0", className)}>
       <CardContent className="flex flex-col gap-5 p-7 flex-1">
         <Quote
           className="size-6 text-accent shrink-0"

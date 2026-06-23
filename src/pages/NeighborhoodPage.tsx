@@ -331,7 +331,7 @@ export default function NeighborhoodPage() {
         <Reveal className="mt-10 flex justify-center">
           <Button asChild variant="outline" size="lg" className="group border-primary/25 hover:border-primary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-200">
             <Link to="/reviews">
-              View All 130+ Reviews
+              View All 140+ Reviews
               <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
           </Button>

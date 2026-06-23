@@ -45,7 +45,7 @@ export function PullQuote() {
             to="/reviews"
             className="mt-10 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-primary-foreground/40 hover:text-accent transition-colors duration-200"
           >
-            Read all 130+ reviews
+            Read all 140+ reviews
             <ArrowRight className="size-3" />
           </Link>
         </Reveal>

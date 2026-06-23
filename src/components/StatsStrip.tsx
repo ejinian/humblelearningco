@@ -10,7 +10,7 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
-  { end: 130, suffix: "+", label: "Five-star reviews" },
+  { end: 140, suffix: "+", label: "Five-star reviews" },
   { end: 1000, suffix: "+", label: "Students helped" },
   { display: "1:1", label: "Always one-on-one" },
   { display: "K–College", label: "Every grade level" },
