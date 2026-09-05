@@ -11,11 +11,12 @@ const config: Config = {
         DEFAULT: "1rem",
         sm: "1.5rem",
         lg: "2rem",
-      },
+      }, 
       screens: {
         "2xl": "1280px",
       },
     },
+
     extend: {
       colors: {
         border: "hsl(var(--border))",
