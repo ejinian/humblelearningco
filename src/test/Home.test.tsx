@@ -40,6 +40,13 @@ describe("App routes", () => {
     expect(screen.getByLabelText(/^email/i)).toBeInTheDocument();
   });
 
+  it("renders the Beverly Hills tutoring page", () => {
+    renderApp("/beverly-hills-tutoring");
+    expect(
+      screen.getByRole("heading", { level: 1, name: /private tutoring in.*beverly hills/i }),
+    ).toBeInTheDocument();
+  });
+
   it("renders the 404 page for unknown routes", () => {
     renderApp("/totally-not-a-page");
     expect(

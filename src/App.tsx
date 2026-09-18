@@ -10,6 +10,7 @@ import FAQ from "@/pages/FAQ";
 import NeighborhoodPage from "@/pages/NeighborhoodPage";
 import SubjectPage from "@/pages/SubjectPage";
 import SubjectNeighborhoodPage from "@/pages/SubjectNeighborhoodPage";
+import BeverlyHillsTutoring from "@/pages/BeverlyHillsTutoring";
 import NotFound from "@/pages/NotFound";
 
 // Redirects from old bare-city slugs → new keyword-rich slugs
@@ -85,6 +86,8 @@ export default function App() {
         <Route path="private-tutor-brentwood" element={<SubjectNeighborhoodPage />} />
         <Route path="private-tutor-calabasas" element={<SubjectNeighborhoodPage />} />
         <Route path="private-tutor-manhattan-beach" element={<SubjectNeighborhoodPage />} />
+        {/* Dedicated, hand-built location page — takes precedence over the generic NeighborhoodPage template */}
+        <Route path="beverly-hills-tutoring" element={<BeverlyHillsTutoring />} />
         {/* Permanent redirects from old bare-city URLs to new keyword slugs */}
         {Object.entries(neighborhoodRedirects).map(([from, to]) => (
           <Route key={from} path={from} element={<Navigate to={`/${to}`} replace />} />
