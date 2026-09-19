@@ -56,7 +56,7 @@ const subjectsAndServices: {
   },
   {
     title: "Algebra, Geometry & Algebra II",
-    body: "Beverly Hills High's honors math sequence moves fast. Sessions target the specific concept a student is missing rather than re-teaching everything from the start.",
+    body: "Concepts build on each other quickly — a gap from one unit tends to resurface a few units later. Sessions target the specific concept a student is missing, not a full re-teach from scratch.",
     icon: Calculator,
     link: { to: "/math-tutor-beverly-hills", label: "Math tutoring in Beverly Hills" },
   },
@@ -68,7 +68,7 @@ const subjectsAndServices: {
   },
   {
     title: "SAT Preparation",
-    body: "A diagnostic first, then a plan built around your student's actual score target — informed by Tiana's own perfect 1600.",
+    body: "Reading, writing, and math sections, with the timing strategy and answer patterns Tiana draws from her own perfect 1600.",
     icon: ScrollText,
     link: { to: "/sat-tutor-beverly-hills", label: "SAT tutoring in Beverly Hills" },
   },
@@ -105,7 +105,7 @@ const subjectsAndServices: {
 const faqs = [
   {
     q: "Do you offer private tutoring in Beverly Hills?",
-    a: "Yes. HUMBLE Learning Co. works with Beverly Hills families in-person and online — one-on-one sessions built around your student's actual course load, not a fixed curriculum. We don't operate an office or storefront in Beverly Hills; sessions happen in your home or over video call, wherever works best for your family.",
+    a: "Yes. HUMBLE Learning Co. works with Beverly Hills families in-person and online, with sessions shaped around your student's actual course load rather than a fixed curriculum. We don't operate an office or storefront in Beverly Hills; sessions happen in your home or over video call, wherever works best for your family.",
   },
   {
     q: "What subjects do you tutor?",
@@ -180,11 +180,6 @@ const structuredData = {
       areaServed: ["Beverly Hills", "Bel Air", "Holmby Hills", "West Hollywood", "Westwood", "Brentwood"].map(
         (name) => ({ "@type": "City", name, addressRegion: "CA", addressCountry: "US" }),
       ),
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: String(site.rating.stars),
-        reviewCount: String(site.rating.reviewCount),
-      },
     },
     {
       "@type": "BreadcrumbList",
@@ -250,9 +245,9 @@ export default function BeverlyHillsTutoring() {
 
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 text-pretty lg:mx-0">
               Beverly Hills schools set a high bar, and the pressure to keep
-              up starts early. HUMBLE Learning Co. works one-on-one with
-              students to build real understanding — not just a better grade
-              on the next test, but the kind of confidence that holds up under
+              up starts early. HUMBLE Learning Co. focuses on building real
+              understanding with each student — not just a better grade on
+              the next test, but the kind of confidence that holds up under
               pressure.
             </p>
 
@@ -380,7 +375,7 @@ export default function BeverlyHillsTutoring() {
               <p className="text-base leading-relaxed text-foreground/80 text-pretty">
                 HUMBLE Learning Co. provides personalized, one-on-one tutoring
                 for students in Beverly Hills and the surrounding Westside —
-                elementary through college. Every session is built around one
+                elementary through college. Every session starts with one
                 student: their current level, the gaps in their understanding,
                 the schoolwork in front of them right now, and the goals they
                 and their family actually care about.
