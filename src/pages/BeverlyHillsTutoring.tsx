@@ -43,6 +43,9 @@ const localSchools = [
   "Hawthorne Elementary",
 ];
 
+// Not located in Beverly Hills — listed separately so they never read as local.
+const nearbySchools = ["Harvard-Westlake Middle School", "Harvard-Westlake Upper School"];
+
 const subjectsAndServices: {
   title: string;
   body: string;
@@ -344,6 +347,16 @@ export default function BeverlyHillsTutoring() {
                 </span>
               ))}
             </div>
+            <div className="mt-3 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground font-medium shrink-0">
+                Nearby schools relevant to local families
+              </div>
+              {nearbySchools.map((school) => (
+                <span key={school} className="text-sm font-medium text-primary/60">
+                  {school}
+                </span>
+              ))}
+            </div>
           </Reveal>
         </div>
       </section>
@@ -514,7 +527,7 @@ export default function BeverlyHillsTutoring() {
               },
               {
                 title: "ISEE",
-                body: "Verbal reasoning, quantitative reasoning, reading comprehension, and math — prepared for the level a student is testing into for independent school admissions.",
+                body: "Verbal reasoning, quantitative reasoning, reading comprehension, and math — including for families testing into Harvard-Westlake and other selective independent schools.",
               },
               {
                 title: "PSAT & AP exams",

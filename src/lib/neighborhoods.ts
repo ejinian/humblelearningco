@@ -12,6 +12,8 @@ export interface Neighborhood {
   nearbyAreas: string[];
   /** Well-known local schools — shown in hero to signal local knowledge. */
   schools: string[];
+  /** Prominent nearby schools relevant to families here, but not physically located in this neighborhood. Optional. */
+  nearbySchools?: string[];
 }
 
 export const neighborhoods: Neighborhood[] = [
@@ -34,7 +36,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "Tarzana families know how quickly a student can fall behind — and how hard it can be to find support that actually clicks. We work with students from kindergarten through college, covering everything from early reading and basic math to AP courses and college coursework, all in one-on-one sessions built around how your student learns.",
     metaDescription: "Private tutoring in Tarzana, CA — one-on-one academic support for K–12 and college. Math, reading, science, test prep, study skills. Free intro call.",
     nearbyAreas: ["Encino", "Woodland Hills", "Calabasas"],
-    schools: ["El Camino Real Charter High School", "Portola Middle School", "Wilbur Charter", "Tarzana Elementary"],
+    schools: ["El Camino Real Charter High School", "Portola Middle School", "Wilbur Charter for Enriched Academics", "Tarzana Elementary"],
   },
   {
     name: "Sherman Oaks",
@@ -44,7 +46,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "Sherman Oaks students range from elementary schoolers building foundational skills to high schoolers navigating honors and AP courses. We cover every stage — closing learning gaps, raising grades, building study habits, and prepping for standardized tests — with a calm, patient approach that keeps students from shutting down.",
     metaDescription: "Private tutoring in Sherman Oaks, CA — one-on-one sessions for all ages and subjects. Math, reading, SAT/ACT prep, ADHD-friendly support. Free call.",
     nearbyAreas: ["Encino", "Studio City", "Burbank"],
-    schools: ["Notre Dame High School", "Walter Reed Middle School", "Millikan Middle School", "North Hollywood High School", "Kester Elementary"],
+    schools: ["Notre Dame High School", "The Buckley School", "Walter Reed Middle School", "Millikan Middle School", "North Hollywood High School", "Kester Elementary"],
   },
   {
     name: "Studio City",
@@ -54,7 +56,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "Studio City's schools are strong, which means expectations are high and falling behind can feel devastating fast. We work with students of all learning styles — including those with ADHD or executive-function gaps — to rebuild confidence, fill in the missing pieces, and turn a subject they dread into one they can actually handle.",
     metaDescription: "Private tutoring in Studio City, CA — patient, personalized 1-on-1 sessions for K–12 and college. Math, reading, science, test prep, ADHD support. Free call.",
     nearbyAreas: ["Sherman Oaks", "West Hollywood", "Beverly Hills"],
-    schools: ["Harvard-Westlake School", "Campbell Hall School", "Carpenter Community Charter", "Walter Reed Middle School"],
+    schools: ["Harvard-Westlake Upper School", "Campbell Hall School", "Carpenter Community Charter", "Walter Reed Middle School"],
   },
   {
     name: "Woodland Hills",
@@ -105,7 +107,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "Westlake Village families set high academic expectations — and their students feel it. We help by identifying exactly what's missing, rebuilding from there, and giving students the skills and confidence to perform on their own. Weekly sessions, targeted exam prep, or something in between — we work around your schedule.",
     metaDescription: "Private tutoring in Westlake Village, CA — one-on-one support for K–12 and college. Math, reading, SAT/ACT prep, study skills. Free intro call.",
     nearbyAreas: ["Agoura Hills", "Calabasas", "Hidden Hills"],
-    schools: ["Westlake High School", "White Oak Elementary", "Conejo Valley Unified schools"],
+    schools: ["Westlake High School", "Oaks Christian School", "White Oak Elementary"],
   },
   {
     name: "Agoura Hills",
@@ -125,7 +127,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "Hidden Hills families hold their children's education to the highest standard. We bring that same rigor to every session — deep subject knowledge, a calm teaching style, and a custom plan that adapts as your student grows. No generic programs, no wasted time.",
     metaDescription: "Private tutoring in Hidden Hills, CA — elite one-on-one academic support for K–12 and college. Math, SAT/ACT prep, AP courses. First call free.",
     nearbyAreas: ["Calabasas", "Westlake Village", "Agoura Hills"],
-    schools: ["Calabasas High School", "Las Virgenes Unified schools"],
+    schools: ["Calabasas High School", "Round Meadow Elementary School"],
   },
   // ── Glendale / Burbank / Pasadena corridor ───────────────────────────────
   {
@@ -136,7 +138,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "Glendale students often come from families with high academic expectations and a serious investment in their children's futures. We match that standard — working one-on-one to fill in gaps, strengthen weak subjects, and build the confidence and discipline that carry students through their most demanding years.",
     metaDescription: "Private tutoring in Glendale, CA — one-on-one academic support for K–12 and college. Math, reading, science, SAT/ACT prep. Free intro call.",
     nearbyAreas: ["Burbank", "Pasadena", "La Canada Flintridge"],
-    schools: ["Hoover High School", "Glendale High School", "Clark Magnet High School", "Eleanor Roosevelt Elementary"],
+    schools: ["Hoover High School", "Glendale High School", "Clark Magnet High School", "Crescenta Valley High School"],
   },
   {
     name: "Burbank",
@@ -146,7 +148,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "Burbank families juggle busy schedules and high expectations. We keep sessions focused and efficient — no fluff, no wasted time — so your student makes real progress without adding more stress to the week. From homework help to test prep, we work around what your household actually needs.",
     metaDescription: "Private tutoring in Burbank, CA — flexible one-on-one sessions for K–12 and college. Math, reading, science, SAT/ACT prep. Free intro call.",
     nearbyAreas: ["Glendale", "Studio City", "Pasadena"],
-    schools: ["Burbank High School", "John Burroughs High School", "David Starr Jordan Middle School", "Luther Burbank Middle School"],
+    schools: ["Burbank High School", "John Burroughs High School", "Providence High School", "Dolores Huerta Middle School", "Luther Burbank Middle School"],
   },
   {
     name: "Pasadena",
@@ -156,7 +158,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "Pasadena students range from public school kids navigating a heavy course load to private school students chasing competitive college admissions. We work with all of them — meeting each student at their level, filling in what's missing, and building the skills and confidence that make school feel manageable again.",
     metaDescription: "Private tutoring in Pasadena, CA — one-on-one academic support for K–12 and college. Math, reading, science, SAT/ACT prep, AP courses. Free call.",
     nearbyAreas: ["South Pasadena", "San Marino", "Glendale"],
-    schools: ["Pasadena High School", "Blair International Baccalaureate", "John Muir High School", "Flintridge Prep", "Westridge School"],
+    schools: ["Pasadena High School", "Blair High School", "John Muir High School", "Polytechnic School", "Westridge School"],
   },
   {
     name: "South Pasadena",
@@ -186,7 +188,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "La Canada students are already working hard — they need targeted support, not more of the same. We specialize in helping high-achieving students close specific gaps, raise test scores, and build the organizational skills that sustain performance across a demanding course load year after year.",
     metaDescription: "Private tutoring in La Canada Flintridge, CA — expert one-on-one sessions for K–12. Math, SAT/ACT prep, AP courses, study skills. Free call.",
     nearbyAreas: ["Pasadena", "Glendale", "San Marino"],
-    schools: ["La Cañada High School", "Palm Crest Elementary", "Flintridge Preparatory School", "Flintridge Sacred Heart Academy"],
+    schools: ["La Cañada High School", "St. Francis High School", "Palm Crest Elementary", "Flintridge Preparatory School", "Flintridge Sacred Heart Academy"],
   },
   // ── Westside ─────────────────────────────────────────────────────────────
   {
@@ -207,7 +209,8 @@ export const neighborhoods: Neighborhood[] = [
     body: "Students in Bel Air attend some of the most demanding schools in Los Angeles, public and private. We meet that bar with genuine expertise across subjects and a teaching approach that prioritizes deep understanding over short-term memorization — because the students who build real foundations are the ones who perform under pressure when it counts.",
     metaDescription: "Private tutoring in Bel Air, CA — one-on-one academic support for K–12 and college students. Math, SAT/ACT prep, AP courses, study skills. Free call.",
     nearbyAreas: ["Beverly Hills", "Holmby Hills", "Brentwood"],
-    schools: ["Paul Revere Middle School", "Bel Air Elementary", "Westlake School"],
+    schools: ["Marymount High School", "Paul Revere Middle School", "Roscomare Road Elementary School"],
+    nearbySchools: ["Harvard-Westlake Middle School", "Harvard-Westlake Upper School"],
   },
   {
     name: "Holmby Hills",
@@ -217,7 +220,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "Holmby Hills families expect a standard of excellence in everything — and academic support is no exception. We bring that same level of commitment to every session: genuine subject expertise, a customized plan, and the patience to make sure your student truly understands, not just gets through.",
     metaDescription: "Private tutoring in Holmby Hills, CA — premium one-on-one academic support for K–12 and college. Math, SAT/ACT prep, AP courses. First call free.",
     nearbyAreas: ["Beverly Hills", "Bel Air", "Brentwood"],
-    schools: ["Fairburn Elementary", "Westwood Charter", "Paul Revere Middle School"],
+    schools: ["Harvard-Westlake Middle School", "Fairburn Elementary", "Westwood Charter", "Paul Revere Middle School"],
   },
   {
     name: "Brentwood",
@@ -227,7 +230,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "Brentwood students attend some of LA's most competitive public and private schools, where expectations are high and the pace is fast. We help students stay ahead of that pace — or get back to it — with focused one-on-one sessions that build genuine understanding, not just short-term exam performance.",
     metaDescription: "Private tutoring in Brentwood, CA — one-on-one sessions for K–12 and college. Math, reading, SAT/ACT prep, AP courses, study skills. Free intro call.",
     nearbyAreas: ["Pacific Palisades", "Santa Monica", "Bel Air"],
-    schools: ["Brentwood School", "Kenter Canyon Elementary", "Paul Revere Middle School"],
+    schools: ["Brentwood School", "The Archer School for Girls", "Paul Revere Middle School", "Kenter Canyon Elementary"],
   },
   {
     name: "Pacific Palisades",
@@ -247,7 +250,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "Santa Monica students compete in some of the most academically demanding environments on the westside. Whether it's honors and AP coursework, standardized test preparation, or college-level work, we bring the patience and subject-matter depth to help students perform — and stop dreading school.",
     metaDescription: "Private tutoring in Santa Monica, CA — one-on-one academic support for K–12 and college. SAT/ACT prep, AP courses, study skills. First call free.",
     nearbyAreas: ["Brentwood", "Pacific Palisades", "Marina del Rey"],
-    schools: ["Santa Monica High School", "John Adams Middle School", "Lincoln Middle School", "Crossroads School", "Saint Monica Catholic High"],
+    schools: ["Santa Monica High School", "John Adams Middle School", "Lincoln Middle School", "Crossroads School", "Saint Monica Preparatory"],
   },
   {
     name: "West Hollywood",
@@ -257,7 +260,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "West Hollywood students come from diverse backgrounds and learn in different ways. We meet every student where they are — whether they need to close a gap, tackle a challenging course load, or build the habits and confidence that make school feel less overwhelming. All one-on-one, all built around how your student actually learns.",
     metaDescription: "Private tutoring in West Hollywood, CA — one-on-one sessions for K–12 and college. Math, reading, science, SAT/ACT prep, ADHD-friendly. Free intro call.",
     nearbyAreas: ["Beverly Hills", "Studio City", "Los Angeles"],
-    schools: ["Fairfax High School", "West Hollywood Elementary", "Laurel Elementary"],
+    schools: ["West Hollywood Elementary", "Center for Early Education", "Laurel Cinematic Arts Creative Tech Magnet", "Fairfax High School"],
   },
   {
     name: "Marina del Rey",
@@ -267,7 +270,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "Families in Marina del Rey expect a high standard of academic support — and that's exactly what we deliver. Every session is one-on-one and built around your student's actual schedule, learning style, and specific gaps. No cookie-cutter plans, no wasted hours.",
     metaDescription: "Private tutoring in Marina del Rey, CA — one-on-one sessions for K–12 and college. Math, reading, SAT/ACT prep, study skills. First call free.",
     nearbyAreas: ["Santa Monica", "Culver City", "Brentwood"],
-    schools: ["Coeur d'Alene Elementary", "Del Rey Heights Elementary"],
+    schools: ["Coeur d'Alene Elementary", "Paseo del Rey Elementary"],
   },
   {
     name: "Culver City",
@@ -308,7 +311,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "Redondo Beach students come from families who care about real academic progress, not just grades on a report card. We work with students at every level — building foundational skills, tackling honors coursework, or preparing for standardized tests — with a patient, focused approach that produces lasting results.",
     metaDescription: "Private tutoring in Redondo Beach, CA — one-on-one sessions for K–12 and college. Math, reading, science, SAT/ACT prep. Free intro call.",
     nearbyAreas: ["Hermosa Beach", "Manhattan Beach", "Rancho Palos Verdes"],
-    schools: ["Redondo Union High School", "Adams Middle School", "Washington Elementary"],
+    schools: ["Redondo Union High School", "Adams Middle School", "Parras Middle School", "Washington Elementary"],
   },
   {
     name: "Hermosa Beach",
@@ -329,6 +332,7 @@ export const neighborhoods: Neighborhood[] = [
     metaDescription: "Private tutoring in Palos Verdes Estates, CA — expert one-on-one sessions for K–12 and college. Math, SAT/ACT prep, AP courses. Free intro call.",
     nearbyAreas: ["Rancho Palos Verdes", "Rolling Hills", "Manhattan Beach"],
     schools: ["Palos Verdes Peninsula High School", "Malaga Cove Middle School", "Lunada Bay Elementary"],
+    nearbySchools: ["Chadwick School"],
   },
   {
     name: "Rancho Palos Verdes",
@@ -339,6 +343,7 @@ export const neighborhoods: Neighborhood[] = [
     metaDescription: "Private tutoring in Rancho Palos Verdes, CA — one-on-one sessions for K–12 and college. Math, SAT/ACT prep, AP courses, study skills. Free call.",
     nearbyAreas: ["Palos Verdes Estates", "Rolling Hills", "Redondo Beach"],
     schools: ["Palos Verdes Peninsula High School", "Miraleste Intermediate"],
+    nearbySchools: ["Chadwick School"],
   },
   {
     name: "Rolling Hills",
@@ -349,6 +354,7 @@ export const neighborhoods: Neighborhood[] = [
     metaDescription: "Private tutoring in Rolling Hills, CA — premium one-on-one academic support for K–12 and college. Math, SAT/ACT prep, AP courses. First call free.",
     nearbyAreas: ["Palos Verdes Estates", "Rancho Palos Verdes", "Manhattan Beach"],
     schools: ["Palos Verdes Peninsula High School", "Rolling Hills Elementary"],
+    nearbySchools: ["Chadwick School"],
   },
   // ── Additional LA neighborhoods ──────────────────────────────────────────
   {
@@ -359,7 +365,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "Malibu students attend small, close-knit schools where individual performance stands out — and expectations from families are high. We bring the same level of personal investment to every session: deep subject knowledge, a plan built around your student, and the patient teaching style that produces real academic growth.",
     metaDescription: "Private tutoring in Malibu, CA — one-on-one academic support for K–12 and college. Math, SAT/ACT prep, AP courses, study skills. First call free.",
     nearbyAreas: ["Pacific Palisades", "Santa Monica", "Calabasas"],
-    schools: ["Malibu High School", "Webster Elementary", "Juan Cabrillo Elementary"],
+    schools: ["Malibu High School", "Malibu Middle School", "Webster Elementary", "Malibu Elementary School"],
   },
   {
     name: "Westwood",
@@ -369,7 +375,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "Westwood families are often deeply invested in academic outcomes — many are UCLA faculty, researchers, or professionals who understand exactly what's at stake with education. We match that standard, working one-on-one to build the kind of deep understanding that holds up in the most competitive environments.",
     metaDescription: "Private tutoring in Westwood, CA — one-on-one academic support for K–12 and college. Math, reading, SAT/ACT prep, AP courses. First call free.",
     nearbyAreas: ["Brentwood", "Bel Air", "Culver City"],
-    schools: ["Westwood Charter Elementary", "Paul Revere Middle School", "UCLA Community School"],
+    schools: ["Geffen Academy at UCLA", "Westwood Charter Elementary", "University High School", "Paul Revere Middle School"],
   },
   {
     name: "Los Feliz",
@@ -379,7 +385,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "Los Feliz students come from a diverse, creative community where parents care about genuine learning — not just grades. We bring a thoughtful, individualized approach to every session, whether your student needs to build foundational skills, tackle an honors course load, or prepare for college admissions testing.",
     metaDescription: "Private tutoring in Los Feliz, CA — one-on-one sessions for K–12 and college. Math, reading, science, SAT/ACT prep, ADHD-friendly. Free intro call.",
     nearbyAreas: ["Glendale", "Burbank", "Los Angeles"],
-    schools: ["Franklin High School", "Marshall High School", "Immaculate Heart High School"],
+    schools: ["John Marshall High School", "Immaculate Heart Middle & High School"],
   },
   {
     name: "Hancock Park",
@@ -389,7 +395,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "Hancock Park families hold their children's education to an exceptionally high standard. We match that commitment with sessions built entirely around your student — no programs, no group classes, no shortcuts. Just genuine one-on-one instruction that builds real understanding and lasting academic skills.",
     metaDescription: "Private tutoring in Hancock Park, CA — one-on-one academic support for K–12 and college. Math, SAT/ACT prep, AP courses, study skills. First call free.",
     nearbyAreas: ["Beverly Hills", "West Hollywood", "Los Angeles"],
-    schools: ["Larchmont Charter School", "Hancock Park Elementary", "Wilshire Crest Elementary"],
+    schools: ["Marlborough School", "Larchmont Charter School", "Hancock Park Elementary", "Wilshire Crest Elementary"],
   },
   {
     name: "Thousand Oaks",
@@ -409,7 +415,7 @@ export const neighborhoods: Neighborhood[] = [
     body: "Torrance is one of the largest and most academically competitive communities in the South Bay, with strong public schools and high expectations from families across the city. We work one-on-one with students at every level — from elementary through college — with a patient approach that builds real, lasting skills.",
     metaDescription: "Private tutoring in Torrance, CA — one-on-one sessions for K–12 and college. Math, reading, science, SAT/ACT prep, study skills. Free intro call.",
     nearbyAreas: ["Redondo Beach", "Manhattan Beach", "Rancho Palos Verdes"],
-    schools: ["North High School", "South High School", "West High School", "Richardson Middle School"],
+    schools: ["Torrance High School", "North High School", "South High School", "West High School", "Richardson Middle School"],
   },
   {
     name: "Granada Hills",
@@ -439,7 +445,8 @@ export const neighborhoods: Neighborhood[] = [
     body: "Hollywood Hills students come from diverse, creative families who value personalized attention and genuine academic growth. We work one-on-one with students at every level — from elementary fundamentals to AP courses and college prep — building the skills and confidence that carry them beyond the next test.",
     metaDescription: "Private tutoring in Hollywood Hills, CA — one-on-one academic support for K–12 and college. Math, SAT/ACT prep, study skills, ADHD-friendly. First call free.",
     nearbyAreas: ["Studio City", "West Hollywood", "Los Feliz"],
-    schools: ["Hollywood High School", "Oakwood School", "Wonderland Avenue Elementary"],
+    schools: ["Hollywood High School", "Wonderland Avenue Elementary"],
+    nearbySchools: ["Oakwood School"],
   },
 ];
 

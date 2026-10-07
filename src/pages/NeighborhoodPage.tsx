@@ -177,6 +177,13 @@ export default function NeighborhoodPage() {
               </p>
             )}
 
+            {neighborhood.nearbySchools && neighborhood.nearbySchools.length > 0 && (
+              <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-foreground/60 text-pretty lg:mx-0">
+                Nearby schools relevant to local families include{" "}
+                <span className="text-foreground/80">{formatList(neighborhood.nearbySchools)}</span>.
+              </p>
+            )}
+
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center lg:justify-start">
               <Button
                 asChild

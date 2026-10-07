@@ -89,7 +89,7 @@ export const subjectNeighborhoods: SubjectNeighborhoodData[] = [
       "Crossroads School",
       "John Adams Middle School",
       "Lincoln Middle School",
-      "Saint Monica Catholic High School",
+      "Saint Monica Preparatory",
     ],
     faqs: [
       {
@@ -371,7 +371,7 @@ export const subjectNeighborhoods: SubjectNeighborhoodData[] = [
     schools: [
       "Santa Monica High School",
       "Crossroads School",
-      "Saint Monica Catholic High School",
+      "Saint Monica Preparatory",
     ],
     faqs: [
       {
