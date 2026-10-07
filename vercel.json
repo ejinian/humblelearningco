@@ -1,12 +1,19 @@
 {
   "functions": {
-    "api/chat.ts": { "maxDuration": 30 },
-    "api/lead.ts": { "maxDuration": 10 }
+    "api/chat.ts": {
+      "maxDuration": 30
+    },
+    "api/lead.ts": {
+      "maxDuration": 10
+    }
   },
-  "rewrites": [
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/:city(encino|tarzana|sherman-oaks|studio-city|woodland-hills|calabasas|porter-ranch|northridge|westlake-village|agoura-hills|hidden-hills|glendale|burbank|pasadena|south-pasadena|san-marino|la-canada-flintridge|beverly-hills|bel-air|holmby-hills|brentwood|pacific-palisades|santa-monica|marina-del-rey|culver-city|manhattan-beach|redondo-beach|hermosa-beach|palos-verdes-estates|rancho-palos-verdes|rolling-hills|malibu|westwood|los-feliz|hancock-park|thousand-oaks|torrance|granada-hills|chatsworth|hollywood-hills)",
+      "destination": "/:city-tutoring",
+      "permanent": true
     }
   ]
 }

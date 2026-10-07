@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
   return (
     <section className="container py-32 text-center">
+      <Helmet>
+        <title>Page not found | HUMBLE Learning Co.</title>
+        <meta name="robots" content="noindex" />
+      </Helmet>
       <p className="text-xs uppercase tracking-[0.22em] text-accent font-medium">
         404
       </p>

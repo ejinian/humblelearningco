@@ -107,7 +107,8 @@ export function Hero() {
               alt={heroPhoto.alt}
               className="absolute inset-0 h-full w-full scale-[1.03] object-cover object-[52%_44%] transition-transform duration-700 hover:scale-[1.07]"
               loading="eager"
-              fetchPriority="high"
+              // React 18 only passes the lowercase attribute through to the DOM.
+              {...{ fetchpriority: "high" }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/32 via-primary/0 to-accent/8" />
           </div>

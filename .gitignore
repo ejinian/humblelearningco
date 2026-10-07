@@ -4,6 +4,7 @@ node_modules/
 # Builds
 dist/
 dist-ssr/
+dist-server/
 *.local
 
 # Env / secrets

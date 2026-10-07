@@ -26,7 +26,7 @@ describe("App routes", () => {
     expect(
       screen.getByRole("heading", {
         level: 1,
-        name: /personalized learning.*proven results/i,
+        name: /personalized tutoring.*proven results/i,
       }),
     ).toBeInTheDocument();
   });
