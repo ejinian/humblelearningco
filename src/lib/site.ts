@@ -30,7 +30,7 @@ export const site = {
 
   rating: {
     stars: 5.0,
-    reviewCount: 140, // confirmed 140+ as of 2026-06-19 (reviews.ts has the substantive ones)
+    reviewCount: 155, // confirmed 155+ as of 2026-10-07 (reviews.ts has the substantive ones)
     source: "Google",
   },
 } as const;

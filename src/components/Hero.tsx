@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 
 const trustIndicators = [
   "1000+ Students Helped",
-  "140+ 5-Star Reviews",
+  "155+ 5-Star Reviews",
   "All Subjects & Grade Levels",
   "Los Angeles & Online Tutoring",
 ];
@@ -118,7 +118,7 @@ export function Hero() {
               </span>
               <div className="leading-tight">
                 <div className="text-sm font-semibold text-primary">
-                  Trusted by 140+ LA families
+                  Trusted by 155+ LA families
                 </div>
                 <div className="text-xs text-muted-foreground">
                   Personalized support from {site.founder}
