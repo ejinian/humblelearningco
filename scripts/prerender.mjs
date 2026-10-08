@@ -38,8 +38,11 @@ const failures = [];
 for (const route of routes) {
   const { html, doc } = page(route);
   if (html.includes(NOT_FOUND_MARKER)) failures.push(route);
-  const file = route === "/" ? "index.html" : `${route.replace(/^\/|\/$/g, "")}.html`;
-  fs.writeFileSync(path.join(distDir, file), doc);
+  // Folder-per-route (about/index.html) so the host serves /about without cleanUrls,
+  // which would also 308 real .html files like the Google verification files.
+  const file = path.join(distDir, route.replace(/^\/|\/$/g, ""), "index.html");
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, doc);
 }
 
 fs.writeFileSync(path.join(distDir, "404.html"), page("/__not-found__").doc);
